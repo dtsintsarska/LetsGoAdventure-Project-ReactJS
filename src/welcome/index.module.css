@@ -1,0 +1,16 @@
+/*main welcome*/
+.welcome {
+    color: #5a7c8a;
+    text-align: center;
+    width: 70%;
+    margin: 0 auto;
+    padding: 50px 0;
+}
+
+/*.welcome h2{
+    font-family: 'PT Serif', serif;
+    font-size: 32px;
+    letter-spacing: 2px;
+    font-style: italic;
+    margin: 0;
+}*/

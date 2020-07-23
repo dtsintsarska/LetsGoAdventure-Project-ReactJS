@@ -1,0 +1,93 @@
+/*navigation*/
+.navigation {
+    display: inline-block;
+    position: absolute;
+}
+
+.siteTitle {
+    font-size: 4px;
+    height: auto;
+    max-width: 10%;
+    left: 10%;
+    top: 5%;
+    padding-top: 2%;
+    padding-left: 10%;
+    float: left;
+}
+
+.navigation {
+    display: inline-block;
+}
+
+nav ul {
+    top: 0;
+    float: right;
+    padding-top: 2%;
+    padding-left: 10%;
+
+}
+
+nav ul li {
+    display: inline-block;
+    text-decoration: none;
+}
+
+nav ul li:not(:last-child) {
+    padding-right: 10px;
+    padding-top: 0px;
+    padding-left: 10px;
+    padding-bottom: 0%;
+}
+
+nav ul li a {
+    color: snow;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    color: #3498b9;
+}
+
+
+/* Dropdown menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.wrapperProgram {
+    margin: 0px;
+    padding-bottom: 30px;
+}
+
+.dropdownContent {
+    display: none;
+    /* display: block; */
+    position: absolute;
+    background-color: transparent;
+    border-radius: 12px;
+    min-width: 90%;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdownContent a {
+    margin-top: 1px;
+    color: #3498b9;
+    padding: 10px 10px;
+    text-decoration: none;
+    display: block;
+    border-bottom: #3498b9;
+    background-color: snow;
+}
+
+.dropdownContent a:hover {
+    background-color: #3498b9;
+    color: snow;
+}
+
+.dropdown:hover .dropdownContent {
+    display: block;
+}
