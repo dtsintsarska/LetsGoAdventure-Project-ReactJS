@@ -1,0 +1,15 @@
+.image {
+    width: 70px;
+}
+
+.listedItem {
+    width: 25%;
+    padding: 15px 35px;
+    display: inline-block;
+    font-size: 19px;
+}
+
+.div {
+    color: white;
+    font-family: "PT Serif", serif;
+}
