@@ -9,17 +9,17 @@ const Footer = () => {
         <li>Follow as:</li>
         <li>
           <a href='#'>
-            <i class='fab fa-facebook'></i>
+            <i className='fab fa-facebook'></i>
           </a>
         </li>
         <li>
           <a href='#'>
-            <i class='fab fa-instagram'></i>
+            <i className='fab fa-instagram'></i>
           </a>
         </li>
         <li>
           <a href='#'>
-            <i class='fab fa-twitter'></i>
+            <i className='fab fa-twitter'></i>
           </a>
         </li>
       </ul>

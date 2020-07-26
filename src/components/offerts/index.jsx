@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import styles from './index.module.css';
-import singleOffert from './singleOffer/index';
+import SingleOffer from './singleOffer/index';
 
-class Offerts extends Component {
+class Offers extends Component {
   constructor(props) {
     super(props);
 
@@ -12,8 +12,9 @@ class Offerts extends Component {
   }
 
   getOfferts = async () => {
-    const promise = await fetch(`http://localhost:9999/api/`);
+    const promise = await fetch(`http://localhost:9999/api/offers`);
     const offerts = await promise.json();
+
     this.setState({
       offerts,
     });
@@ -25,7 +26,7 @@ class Offerts extends Component {
     console.log(offerts);
 
     return offerts.map((offert) => {
-      return <singleOffert key={offert._id} {...offert} />;
+      return <SingleOffer key={offert._id} {...offert} />;
     });
   }
 
@@ -44,4 +45,4 @@ class Offerts extends Component {
   }
 }
 
-export default Offerts;
+export default Offers;
