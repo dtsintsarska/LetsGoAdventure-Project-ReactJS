@@ -1,12 +1,13 @@
 /*footer*/
 footer {
     background: #3498b9;
-
+    padding: 0;
+    margin: 0;
 }
 
 footer p {
     display: inline-block;
-    width: 30%;
+    width: 25%;
     text-align: right;
     color: black;
     padding-bottom: 0%;
