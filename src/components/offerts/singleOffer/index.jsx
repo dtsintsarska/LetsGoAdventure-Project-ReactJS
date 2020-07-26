@@ -1,25 +1,36 @@
 import React from 'react';
 import styles from './index.module.css';
 
-const singleOffert = ({ img, title, date, price, description }) => {
+const SingleOffer = ({
+  image,
+  destination,
+  date,
+  price,
+  guide,
+  category,
+  days,
+  description,
+  country,
+}) => {
   return (
     <li className={styles.offert}>
-      <img src={img} alt='picture' />
+      <img src={image} alt='picture' />
       <section className={styles.info}>
         <div>
-          <h3>{title}</h3>
+          <h3>{destination}</h3>
           <p>{date}</p>
         </div>
         <div>
-          <p>{price}</p>
+          <p>{days} days</p>
         </div>
       </section>
       <section className={styles.more}>
-        <p>{description}</p>
-        <button>ENROLL TODAY</button>
+        <p>Coutry: {country}</p>
+        <p>Guide: {guide}</p>
+        <button>READ MORE</button>
       </section>
     </li>
   );
 };
 
-export default singleOffert;
+export default SingleOffer;

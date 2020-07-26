@@ -13,10 +13,10 @@ const Navigation = () => {
     <BrowserRouter>
       <Switch>
         <Route path='/' exact component={HomePage} />
-        {/* <Route path='/share' component={ShareThoughtsPage} />
-        <Route path='/register' component={RegisterPage} />
-        <Route path='/login' component={LoginPage} />
-        <Route path='/profile/:userid' component={ProfilePage} />
+        {/* <Route path="/share" component={ShareThoughtsPage} />
+        <Route path="/register" component={RegisterPage} />
+        <Route path="/login" component={LoginPage} />
+        <Route path="/profile/:userid" component={ProfilePage} />
         <Route component={ErrorPage} /> */}
       </Switch>
     </BrowserRouter>
