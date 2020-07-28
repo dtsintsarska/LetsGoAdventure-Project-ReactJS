@@ -7,6 +7,7 @@ import Header from '../../components/header';
 import Footer from '../../components/footer';
 //import PageLayout from '../../components/page-layout'
 import Input from '../../components/input/index';
+import Link from '../../components/link';
 
 class LoginPage extends Component {
   constructor(props) {
@@ -69,7 +70,7 @@ class LoginPage extends Component {
           <SubmitButton title='Login' />
           <span>
             New user?
-            <a href='#'> Create an account</a>
+            <Link href='/register' title=' Create your own account' />
           </span>
         </form>
         <Footer />

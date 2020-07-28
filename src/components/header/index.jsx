@@ -1,44 +1,51 @@
 import React from 'react';
-// import Link from '../link'
+import Link from '../../components/link';
 import styles from './index.module.css';
 import logo from '../../images/logo.png';
+import getNavigation from '../../helpers/navigation-list';
+import Dropdown from './dropdown/index';
 
 const Header = () => {
+  const links = getNavigation();
+
+  console.log('Links', links);
+
   return (
     <section className={styles.navigation}>
       <img src={logo} alt='Logo' className={styles.siteTitle} />
       <nav>
         <ul>
-          <li>
-            <div className={styles.dropdown}>
-              <span className={styles.wrapperProgram}>
-                <a href='#'>ABOUT LET'S GO ADVENTURE</a>
-              </span>
-              <div className={styles.dropdownContent}>
-                <a href='#'>Team</a>
-                <a href='#'>Contact us</a>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div className={styles.dropdown}>
-              <span className={styles.wrapperProgram}>
-                <a href='#'>OUR ADVENTURES</a>
-              </span>
-              <div className={styles.dropdownContent}>
-                <a href='#'>Mointain Adventures</a>
-                <a href='#'>Sea Adventures</a>
-                <a href='#'>Adventures abroad</a>
-                <a href='#'>Adventures with bikes</a>
-              </div>
-            </div>
-          </li>
-          <li>
-            <a href='#'>LOGIN</a>
-          </li>
-          <li>
-            <a href='#'>REGISTER</a>
-          </li>
+          {links.map((navElement) => {
+            if (navElement.dropdown) {
+              return (
+                <li>
+                  <div className={styles.dropdown}>
+                    <span className={styles.wrapperProgram}>
+                      <Link
+                        key={navElement.title}
+                        href={navElement.link}
+                        title={navElement.title}
+                      />
+                    </span>
+                    <div className={styles.dropdownContent}>
+                      <Dropdown list={navElement.dropdown} />
+                    </div>
+                  </div>
+                </li>
+              );
+            } else {
+              return (
+                <li>
+                  <Link
+                    key={navElement.title}
+                    href={navElement.link}
+                    title={navElement.title}
+                    // type="header"
+                  />
+                </li>
+              );
+            }
+          })}
         </ul>
       </nav>
     </section>

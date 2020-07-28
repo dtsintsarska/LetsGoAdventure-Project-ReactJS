@@ -7,6 +7,7 @@ import Header from '../../components/header';
 import Footer from '../../components/footer';
 //import PageLayout from '../../components/page-layout'
 import Input from '../../components/input/index';
+import Link from '../../components/link';
 
 class RegisterPage extends Component {
   constructor(props) {
@@ -79,7 +80,7 @@ class RegisterPage extends Component {
           <SubmitButton title='Register' />
           <span>
             Already have an account?
-            <a href='#'> Sign in</a>
+            <Link href='/login' title='Sign in' />
           </span>
         </form>
         <Footer />
