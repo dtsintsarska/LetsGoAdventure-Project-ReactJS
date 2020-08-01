@@ -1,6 +1,7 @@
 import React from 'react';
 // import Link from '../link'
 import styles from './index.module.css';
+//import Link from '../link/index';
 
 const Background = () => {
   return (

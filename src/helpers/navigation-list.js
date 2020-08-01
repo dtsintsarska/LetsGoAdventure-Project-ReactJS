@@ -26,11 +26,11 @@ const getNavigation = (loggedIn, user) => {
             link: "/aboutUs",
             dropdown: [{
                     title: 'Our Team',
-                    link: "/aboutUs/team"
+                    link: "/aboutus/team"
                 },
                 {
                     title: "Contact us",
-                    link: "/aboutUs/contacts"
+                    link: "/aboutus/contacts"
                 }
             ]
         },
@@ -63,14 +63,14 @@ const getNavigation = (loggedIn, user) => {
         },
         {
             title: "ABOUT US",
-            link: "/aboutUs",
+            link: "/aboutus",
             dropdown: [{
                     title: 'Our Team',
-                    link: "/aboutUs/team"
+                    link: "/aboutus/team"
                 },
                 {
                     title: "Contact us",
-                    link: "/aboutUs/contacts"
+                    link: "/aboutus/contacts"
                 }
             ]
         },

@@ -1,0 +1,20 @@
+.background {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../images/sandy-island-in-the-middle-of-the-ocean-wallpaper-1008x380-415.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.background h4 {
+    color: snow;
+    text-align: center;
+    font-size: 20px;
+    font-style: oblique;
+    padding-bottom: 2%;
+}
+
+.info section {
+    float: left;
+}
+
+.info {
+    background-color: white;
+}
