@@ -23,8 +23,6 @@ class Offers extends Component {
   renderOfferts() {
     const { offerts } = this.state;
 
-    console.log(offerts);
-
     return offerts.map((offert) => {
       return <SingleOffer key={offert._id} {...offert} />;
     });
