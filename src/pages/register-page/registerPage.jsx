@@ -60,6 +60,7 @@ class RegisterPage extends Component {
             label='Username'
             id='username'
             type='text'
+            placeholder='Please type your username'
           />
           <Input
             type='password'
@@ -68,6 +69,7 @@ class RegisterPage extends Component {
             label='Password'
             id='password'
             type='password'
+            placeholder='Please type your password'
           />
           <Input
             type='password'
@@ -76,6 +78,7 @@ class RegisterPage extends Component {
             label='Re-Password'
             id='re-password'
             type='password'
+            placeholder='Please repeat your password'
           />
           <SubmitButton title='Register' />
           <span>

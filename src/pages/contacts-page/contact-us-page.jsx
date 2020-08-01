@@ -1,15 +1,10 @@
 import React, { Component, Fragment } from 'react';
-//import { Helmet } from 'react-helmet';
 import Title from '../../components/title';
-//import SubmitButton from '../../components/submit-button';
 import styles from './contacts.module.css';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
 import Details from '../../components/contact-details/index';
 import Map from '../../components/map/index';
-//import PageLayout from '../../components/page-layout'
-//import Input from '../../components/input/index';
-//import Link from '../../components/link';
 
 class Contacts extends Component {
   constructor(props) {

@@ -9,7 +9,7 @@ footer p {
     display: inline-block;
     width: 25%;
     text-align: right;
-    color: black;
+    color: snow;
     padding-bottom: 0%;
 }
 
@@ -35,8 +35,12 @@ footer ul li a:hover {
     color: black;
 }
 
+.social li {
+    color: snow;
+}
+
 .social li a i {
-    border: 1px solid black;
+    border: 1px solid snow;
     border-radius: 50%;
     padding: 8px;
     color: snow;

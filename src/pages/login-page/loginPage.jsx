@@ -58,6 +58,7 @@ class LoginPage extends Component {
             label='Username'
             id='username'
             type='text'
+            placeholder='Please type your username'
           />
           <Input
             type='password'
@@ -66,6 +67,7 @@ class LoginPage extends Component {
             label='Password'
             id='password'
             type='password'
+            placeholder='Please type your password'
           />
           <SubmitButton title='Login' />
           <span>
