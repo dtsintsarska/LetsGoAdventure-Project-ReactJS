@@ -6,6 +6,7 @@ import RegisterPage from './pages/register-page/registerPage';
 import LoginPage from './pages/login-page/loginPage';
 import Contacts from './pages/contacts-page/contact-us-page';
 import TeamPage from './pages/team-page/team-page';
+import AboutUsPage from './pages/aboutUs-page/about-us-page';
 
 const Navigation = () => {
   return (
@@ -15,6 +16,7 @@ const Navigation = () => {
         <Route path='/home' component={HomePage} />
         <Route path='/register' component={RegisterPage} />
         <Route path='/login' component={LoginPage} />
+        <Route path='/aboutus' exact component={AboutUsPage} />
         <Route path='/aboutus/contacts' component={Contacts} />
         <Route path='/aboutus/team' component={TeamPage} />
         {/* <Route component={ErrorPage} />  */}
