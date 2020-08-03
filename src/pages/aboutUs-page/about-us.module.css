@@ -1,0 +1,42 @@
+.background {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../images/Ice-Lakes-BG.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.background h4 {
+    color: snow;
+    text-align: center;
+    font-size: 20px;
+    font-style: oblique;
+    padding-bottom: 2%;
+}
+
+.info {
+    background-color: white;
+    padding-left: 10%;
+    padding-right: 10%;
+
+}
+
+.info h1 {
+    text-align: center;
+    color: #3498b9;
+    font-size: 30px;
+}
+
+.info p {
+    text-align: justify;
+    color: #3498b9;
+    font-size: 20px;
+}
+
+.info h4 {
+    text-align: center;
+    color: #3498b9;
+    font-weight: 800;
+    font-size: 20px;
+}
+
+.buttons {
+    text-align: center;
+}

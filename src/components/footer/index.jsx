@@ -8,17 +8,17 @@ const Footer = () => {
       <ul className={styles.social}>
         <li>Follow as:</li>
         <li>
-          <a href='#'>
+          <a href='http://www.facebook.com'>
             <i className='fab fa-facebook'></i>
           </a>
         </li>
         <li>
-          <a href='#'>
+          <a href='http://www.instagram.com'>
             <i className='fab fa-instagram'></i>
           </a>
         </li>
         <li>
-          <a href='#'>
+          <a href='http://www.twitter.com'>
             <i className='fab fa-twitter'></i>
           </a>
         </li>

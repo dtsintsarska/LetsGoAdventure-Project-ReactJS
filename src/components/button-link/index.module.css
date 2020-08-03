@@ -1,4 +1,4 @@
-.submit {
+.button {
     background: #3498b9;
     color: snow;
     padding: 1%;
@@ -11,15 +11,9 @@
     font-size: 20px;
 }
 
-.submit:hover {
+.button:hover {
     background-color: #fff;
     border: 1px solid #3498b9;
     color: #3498b9;
 
-}
-
-.container {
-    text-align: center;
-    padding-bottom: 2%;
-    padding-top: 3%;
 }
