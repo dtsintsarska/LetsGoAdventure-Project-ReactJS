@@ -12,6 +12,7 @@ const SingleOffer = ({
   days,
   description,
   country,
+  _id,
 }) => {
   return (
     <li className={styles.offert}>
@@ -29,7 +30,7 @@ const SingleOffer = ({
         <div>Coutry: {country}</div>
         <div>Guide: {guide}</div>
         <div>Category: {category}</div>
-        <Button title='See more' />
+        <Button title='See more' href={`/adventures/${_id}`} />
       </section>
     </li>
   );
