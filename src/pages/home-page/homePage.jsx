@@ -6,7 +6,7 @@ import Advantages from '../../components/advantages/index';
 import Footer from '../../components/footer/index';
 import Offers from '../../components/offerts/index';
 
-const HomePage = (props) => {
+const HomePage = () => {
   return (
     <div>
       <header>
@@ -16,7 +16,7 @@ const HomePage = (props) => {
       <main>
         <Welcome />
         <Advantages />
-        <Offers />
+        <Offers title='Upcoming Adventures' />
       </main>
       <Footer />
     </div>

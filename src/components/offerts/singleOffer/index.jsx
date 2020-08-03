@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './index.module.css';
+import Button from '../../button-link';
 
 const SingleOffer = ({
   image,
@@ -25,9 +26,10 @@ const SingleOffer = ({
         </div>
       </section>
       <section className={styles.more}>
-        <p>Coutry: {country}</p>
-        <p>Guide: {guide}</p>
-        <button>READ MORE</button>
+        <div>Coutry: {country}</div>
+        <div>Guide: {guide}</div>
+        <div>Category: {category}</div>
+        <Button title='See more' />
       </section>
     </li>
   );
