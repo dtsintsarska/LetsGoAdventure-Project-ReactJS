@@ -6,8 +6,10 @@ class Offers extends Component {
   constructor(props) {
     super(props);
 
+    console.log(props);
     this.state = {
       offerts: [],
+      title: props.title,
     };
   }
 
@@ -35,7 +37,7 @@ class Offers extends Component {
   render() {
     return (
       <section className={styles.camps}>
-        <h2>Upcoming Adventures</h2>
+        <h2>{this.state.title}</h2>
 
         <ul>{this.renderOfferts()}</ul>
       </section>
