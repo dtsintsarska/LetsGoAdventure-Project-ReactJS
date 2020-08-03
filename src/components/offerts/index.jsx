@@ -6,7 +6,6 @@ class Offers extends Component {
   constructor(props) {
     super(props);
 
-    console.log(props);
     this.state = {
       offerts: [],
       title: props.title,

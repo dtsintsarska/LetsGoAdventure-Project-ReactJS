@@ -1,0 +1,52 @@
+.background {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+
+}
+
+.background h3 {
+    color: snow;
+    text-align: center;
+    padding-bottom: 10%;
+    font-size: 20px;
+    font-style: oblique;
+}
+
+.container {
+    background-color: white;
+    display: inline-block;
+
+}
+
+
+.aside {
+    display: inline-block;
+    width: 30%;
+    padding-left: 25px;
+    margin-left: 25px;
+    font-style: italic;
+    background-color: lightgray;
+    margin-right: 1%;
+    text-align: left;
+    padding-bottom: 2%;
+    margin-bottom: 5%;
+    align-items: center;
+    vertical-align: top;
+
+}
+
+.content {
+    float: right;
+    text-align: justify;
+    padding-right: 10%;
+    width: 50%;
+    padding-top: 0%;
+    /* padding-left: 35%; */
+}
+
+.loading {
+    text-align: center;
+    display: block;
+}
