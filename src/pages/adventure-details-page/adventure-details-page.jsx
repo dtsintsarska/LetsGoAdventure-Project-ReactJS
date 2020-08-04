@@ -1,9 +1,12 @@
 import React, { Component, Fragment } from 'react';
+import { Link } from 'react-router-dom';
 import Header from '../../components/header/index';
 import Footer from '../../components/footer';
 import styles from './adventure-details.module.css';
 import Title from '../../components/title';
 import Paragraph from '../../components/paragraphs';
+import Gallery from '../../components/galery';
+
 class AdventureDetailsPage extends Component {
   constructor(props) {
     super(props);
@@ -20,6 +23,7 @@ class AdventureDetailsPage extends Component {
       image: null,
       participants: null,
       price: null,
+      galery: null,
     };
   }
 
@@ -52,6 +56,7 @@ class AdventureDetailsPage extends Component {
       image: adventure.image,
       participants: adventure.participants.length,
       price: adventure.price,
+      galery: adventure.galery,
     });
   };
 
@@ -68,6 +73,7 @@ class AdventureDetailsPage extends Component {
       image,
       participants,
       price,
+      galery,
     } = this.state;
 
     if (!id) {
@@ -131,9 +137,27 @@ class AdventureDetailsPage extends Component {
                   <strong>Guide: </strong>
                   {guide}
                 </div>
+                <div className={styles.infoButton}>
+                  <strong>Do you want to become part of this adventure?</strong>
+                  <div>
+                    <Link to={`/adventures/enroll/${id}`}>
+                      <button type='button' className={styles.button}>
+                        Save your seat here!
+                      </button>
+                    </Link>
+                  </div>
+                </div>
               </section>
             </div>
           </aside>
+          <section>
+            <div className={styles.galery}>
+              <h3>Adventure's Gallery</h3>
+              {galery.map((image, index) => {
+                return <Gallery image={image} alt='Pic' key={index} />;
+              })}
+            </div>
+          </section>
         </section>
 
         <Footer />

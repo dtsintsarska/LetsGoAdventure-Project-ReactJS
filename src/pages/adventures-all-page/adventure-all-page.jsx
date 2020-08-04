@@ -5,7 +5,6 @@ import Title from '../../components/title';
 import styles from './adventure-all.module.css';
 import Search from '../../components/search';
 import Offers from '../../components/offerts';
-//import Offers from '../../components/offerts/index';
 
 const AdventuresAll = () => {
   return (

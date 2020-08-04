@@ -49,4 +49,44 @@
 .loading {
     text-align: center;
     display: block;
+    background-image: url('../../images/loading.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.button {
+    color: black;
+    background-color: lightgreen;
+    width: 150px;
+    height: 70px;
+    border-radius: 15px;
+    border: 1px solid white;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.button:hover {
+    background-color: #fff;
+    border: 1px solid lightgreen;
+    color: green;
+
+}
+
+.infoButton {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.galery {
+    display: inline-block;
+    padding-top: 2%;
+    padding-left: 1%;
+}
+
+.galery h3 {
+    color: #3498b9;
+    text-align: left;
+    padding-left: 7%;
 }
