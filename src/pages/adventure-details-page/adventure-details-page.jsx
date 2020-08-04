@@ -24,6 +24,8 @@ class AdventureDetailsPage extends Component {
       participants: null,
       price: null,
       galery: null,
+      seats: null,
+      level: null,
     };
   }
 
@@ -54,9 +56,11 @@ class AdventureDetailsPage extends Component {
       destination: adventure.destination,
       guide: adventure.guide,
       image: adventure.image,
-      participants: adventure.participants.length,
       price: adventure.price,
       galery: adventure.galery,
+      seats: adventure.seats,
+      level: adventure.level,
+      participants: adventure.participants.length,
     });
   };
 
@@ -74,7 +78,11 @@ class AdventureDetailsPage extends Component {
       participants,
       price,
       galery,
+      seats,
+      level,
     } = this.state;
+
+    const free = seats - participants;
 
     if (!id) {
       return (
@@ -122,6 +130,10 @@ class AdventureDetailsPage extends Component {
                   {category}
                 </div>
                 <div>
+                  <strong>Level: </strong>
+                  {level}
+                </div>
+                <div>
                   <strong>Days: </strong>
                   {days}
                 </div>
@@ -131,7 +143,7 @@ class AdventureDetailsPage extends Component {
                 </div>
                 <div>
                   <strong>Available seats: </strong>
-                  Only {participants} left!
+                  Only {free} left!
                 </div>
                 <div>
                   <strong>Guide: </strong>

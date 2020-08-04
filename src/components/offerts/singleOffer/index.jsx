@@ -27,7 +27,7 @@ const SingleOffer = ({
         </div>
       </section>
       <section className={styles.more}>
-        <div>Coutry: {country}</div>
+        <div>Country: {country}</div>
         <div>Guide: {guide}</div>
         <div>Category: {category}</div>
         <Button title='See more' href={`/adventures/${_id}`} />

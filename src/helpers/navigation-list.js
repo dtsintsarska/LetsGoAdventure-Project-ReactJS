@@ -9,21 +9,21 @@ const getNavigation = (loggedIn, user) => {
                 },
                 {
                     title: "Sea Adventures",
-                    link: "adventures/sea"
+                    link: "/adventures/sea"
                 },
                 {
                     title: "Adventures Abroad",
-                    link: "adventures/abroad"
+                    link: "/adventures/abroad"
                 },
                 {
                     title: "MTB Adventures",
-                    link: "adventures/MTB"
+                    link: "/adventures/MTB"
                 }
             ]
         },
         {
             title: "ABOUT US",
-            link: "/aboutUs",
+            link: "/aboutus",
             dropdown: [{
                     title: 'Our Team',
                     link: "/aboutus/team"
@@ -49,15 +49,15 @@ const getNavigation = (loggedIn, user) => {
                 },
                 {
                     title: "Sea Adventures",
-                    link: "adventures/sea"
+                    link: "/adventures/sea"
                 },
                 {
                     title: "Adventures Abroad",
-                    link: "adventures/abroad"
+                    link: "/adventures/abroad"
                 },
                 {
                     title: "MTB Adventures",
-                    link: "adventures/MTB"
+                    link: "/adventures/MTB"
                 }
             ]
         },
@@ -82,6 +82,10 @@ const getNavigation = (loggedIn, user) => {
         {
             title: "LOGIN",
             link: "/login"
+        },
+        {
+            title: "CREATE NEW ADVENTURE",
+            link: "/adventures/create-new"
         }
     ]
 
