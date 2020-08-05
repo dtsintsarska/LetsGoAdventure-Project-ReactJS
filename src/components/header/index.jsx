@@ -5,20 +5,24 @@ import logo from '../../images/logo.png';
 import getNavigation from '../../helpers/navigation-list';
 import Dropdown from './dropdown/index';
 import { Router, withRouter } from 'react-router-dom';
-import { Redirect } from 'react-router-dom';
+import UserContext from '../../Context';
 
 class Header extends React.Component {
   constructor(props) {
     super(props);
   }
 
-  links = getNavigation();
+  static contextType = UserContext;
 
   onHome = () => {
     this.props.history.push('/home');
   };
 
   render() {
+    const { user } = this.context;
+
+    const links = getNavigation(user);
+
     return (
       <section className={styles.navigation}>
         <img
@@ -30,7 +34,7 @@ class Header extends React.Component {
 
         <nav>
           <ul>
-            {this.links.map((navElement, index) => {
+            {links.map((navElement, index) => {
               if (navElement.dropdown) {
                 return (
                   <li key={index}>

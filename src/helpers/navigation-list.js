@@ -1,4 +1,4 @@
-const getNavigation = (loggedIn, user) => {
+const getNavigation = (user) => {
 
     const authLinks = [{
             title: "OUR ADVENTURES",
@@ -37,6 +37,10 @@ const getNavigation = (loggedIn, user) => {
         {
             title: "MY PROFILE",
             link: `/profile/${user && user.id}`
+        },
+        {
+            title: "CREATE NEW ADVENTURE",
+            link: "/adventures/create-new"
         }
     ]
 
@@ -83,12 +87,9 @@ const getNavigation = (loggedIn, user) => {
             title: "LOGIN",
             link: "/login"
         },
-        {
-            title: "CREATE NEW ADVENTURE",
-            link: "/adventures/create-new"
-        }
-    ]
 
+    ]
+    const loggedIn = user && user.loggedIn
     return loggedIn ? authLinks : guestLinks
 }
 

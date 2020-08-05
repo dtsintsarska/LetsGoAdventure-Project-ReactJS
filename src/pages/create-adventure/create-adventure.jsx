@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState, Fragment, useContext } from 'react';
 import styles from './create-adventure.module.css';
 //import { useHistory } from 'react-router-dom';
 import Header from '../../components/header';
@@ -6,7 +6,8 @@ import Footer from '../../components/footer';
 import Input from '../../components/input';
 import Title from '../../components/title';
 import SubmitButton from '../../components/submit-button';
-//import getCookie from '../../utils/cookie'
+import getCookie from '../../helpers/cookie';
+import UserContext from '../../Context';
 
 const CreateAdventurePage = () => {
   const [destination, setDestination] = useState('');
@@ -21,6 +22,7 @@ const CreateAdventurePage = () => {
   const [days, setDays] = useState('');
   const [seats, setSeats] = useState('');
   const [galery, setGallery] = useState([]);
+  const context = useContext(UserContext);
 
   //const [updatedOrigami, setUpdatedOrigami] = useState([])
 
@@ -45,12 +47,21 @@ const CreateAdventurePage = () => {
       }),
       headers: {
         'Content-Type': 'application/json',
-        //  'Authorization': getCookie('x-auth-token')
+        Authorization: getCookie('x-auth-token'),
       },
     });
     setDestination('');
     setCountry('');
-    //setUpdatedOrigami([...updatedOrigami, 1])
+    setDescription('');
+    setGallery([]);
+    setSeats('');
+    setImage('');
+    setLevel('');
+    setPrice('');
+    setDate('');
+    setDays('');
+    setCategory('');
+    setGuide('');
   };
 
   return (
