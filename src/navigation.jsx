@@ -14,9 +14,10 @@ import CreateAdventurePage from './pages/create-adventure/create-adventure';
 
 const Navigation = () => {
   const context = useContext(UserContext);
-  console.log(context);
   const loggedIn = context.user.loggedIn;
+  const isAdmin = context.isAdmin;
 
+  console.log(context);
   return (
     <BrowserRouter>
       <Switch>
@@ -31,11 +32,10 @@ const Navigation = () => {
         <Route path='/aboutus' exact component={AboutUsPage} />
         <Route path='/aboutus/contacts' component={Contacts} />
         <Route path='/aboutus/team' component={TeamPage} />
-        <Route
-          path='/adventures/create-new'
-          exact
-          component={CreateAdventurePage}
-        />
+        <Route path='/adventures/create-new'>
+          {!isAdmin ? <Redirect to='/home' /> : <CreateAdventurePage />}
+        </Route>
+
         <Route path='/adventures' exact component={AdventuresAllPage} />
         <Route path='/adventures/:id' exact component={AdventureDetailsPage} />
 

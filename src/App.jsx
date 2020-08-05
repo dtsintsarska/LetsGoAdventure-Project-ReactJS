@@ -1,15 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import UserContext from './Context';
 import getCookie from './helpers/cookie';
+import adminList from './helpers/admin';
 
 const App = (props) => {
   const [user, setUser] = useState({});
   const [loading, setLoading] = useState(true);
+  const [isAdmin, setAdmin] = useState(false);
 
   const logIn = (user) => {
+    if (adminList.includes(user.id.toString())) {
+      setAdmin(true);
+    }
+
     setUser({
       ...user,
       loggedIn: true,
+      isAdmin,
     });
   };
 
@@ -68,6 +75,7 @@ const App = (props) => {
     <UserContext.Provider
       value={{
         user,
+        isAdmin,
         logIn,
         logOut,
       }}

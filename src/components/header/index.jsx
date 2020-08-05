@@ -19,9 +19,9 @@ class Header extends React.Component {
   };
 
   render() {
-    const { user } = this.context;
+    const { user, isAdmin } = this.context;
 
-    const links = getNavigation(user);
+    const links = getNavigation(user, isAdmin);
 
     return (
       <section className={styles.navigation}>
