@@ -16,7 +16,7 @@ const HomePage = () => {
       <main>
         <Welcome />
         <Advantages />
-        <Offers title='Upcoming Adventures' />
+        <Offers title='Upcoming Adventures' length='3' />
       </main>
       <Footer />
     </div>

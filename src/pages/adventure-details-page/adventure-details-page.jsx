@@ -6,6 +6,7 @@ import styles from './adventure-details.module.css';
 import Title from '../../components/title';
 import Paragraph from '../../components/paragraphs';
 import Gallery from '../../components/galery';
+import UserContext from '../../Context';
 
 class AdventureDetailsPage extends Component {
   constructor(props) {
@@ -29,7 +30,7 @@ class AdventureDetailsPage extends Component {
     };
   }
 
-  //static contextType = UserContext
+  static contextType = UserContext;
 
   componentDidMount() {
     this.getOffer(this.props.match.params.id);
@@ -166,7 +167,7 @@ class AdventureDetailsPage extends Component {
             <div className={styles.galery}>
               <h3>Adventure's Gallery</h3>
               {galery.map((image, index) => {
-                return <Gallery image={image} alt='Pic' key={index} />;
+                return <Gallery image={image} alt='Pic' />;
               })}
             </div>
           </section>

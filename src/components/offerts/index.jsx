@@ -9,6 +9,7 @@ class Offers extends Component {
     this.state = {
       offerts: [],
       title: props.title,
+      length: props.length,
     };
   }
 
@@ -22,7 +23,8 @@ class Offers extends Component {
   };
 
   renderOfferts() {
-    const { offerts } = this.state;
+    let { offerts, length } = this.state;
+    offerts = offerts.slice(0, length);
 
     return offerts.map((offert) => {
       return <SingleOffer key={offert._id} {...offert} />;

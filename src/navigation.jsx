@@ -1,5 +1,6 @@
-import React from 'react';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import UserContext from './Context';
 
 import HomePage from './pages/home-page/homePage';
 import RegisterPage from './pages/register-page/registerPage';
@@ -12,13 +13,21 @@ import AdventureDetailsPage from './pages/adventure-details-page/adventure-detai
 import CreateAdventurePage from './pages/create-adventure/create-adventure';
 
 const Navigation = () => {
+  const context = useContext(UserContext);
+  console.log(context);
+  const loggedIn = context.user.loggedIn;
+
   return (
     <BrowserRouter>
       <Switch>
         <Route path='/' exact component={HomePage} />
         <Route path='/home' component={HomePage} />
-        <Route path='/register' component={RegisterPage} />
-        <Route path='/login' component={LoginPage} />
+        <Route path='/register'>
+          {loggedIn ? <Redirect to='/home' /> : <RegisterPage />}
+        </Route>
+        <Route path='/login'>
+          {loggedIn ? <Redirect to='/home' /> : <LoginPage />}
+        </Route>
         <Route path='/aboutus' exact component={AboutUsPage} />
         <Route path='/aboutus/contacts' component={Contacts} />
         <Route path='/aboutus/team' component={TeamPage} />
