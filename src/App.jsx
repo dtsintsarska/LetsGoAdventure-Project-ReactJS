@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import UserContext from './Context';
 import getCookie from './helpers/cookie';
 import adminList from './helpers/admin';
+import Loading from './components/loading';
 
 const App = (props) => {
   const [user, setUser] = useState({});
@@ -60,15 +61,7 @@ const App = (props) => {
   }, []);
 
   if (loading) {
-    return (
-      <div style={{ textAlign: 'center' }}>
-        <h3 style={{ textAlign: 'center' }}>Loading....</h3>
-        <img
-          src='https://miro.medium.com/max/1080/0*DqHGYPBA-ANwsma2.gif'
-          alt='Loading'
-        />
-      </div>
-    );
+    return <Loading />;
   }
 
   return (

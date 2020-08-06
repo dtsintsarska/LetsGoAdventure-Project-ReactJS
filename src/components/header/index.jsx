@@ -4,14 +4,10 @@ import styles from './index.module.css';
 import logo from '../../images/logo.png';
 import getNavigation from '../../helpers/navigation-list';
 import Dropdown from './dropdown/index';
-import { Router, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import UserContext from '../../Context';
 
 class Header extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
   static contextType = UserContext;
 
   onHome = () => {

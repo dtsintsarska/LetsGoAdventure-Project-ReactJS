@@ -1,5 +1,4 @@
 import React, { Fragment } from 'react';
-import { Link } from 'react-router-dom';
 import Title from '../../components/title';
 import styles from './about-us.module.css';
 import Header from '../../components/header';

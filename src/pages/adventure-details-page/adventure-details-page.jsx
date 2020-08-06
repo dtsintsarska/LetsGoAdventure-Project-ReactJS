@@ -7,6 +7,7 @@ import Title from '../../components/title';
 import Paragraph from '../../components/paragraphs';
 import Gallery from '../../components/galery';
 import UserContext from '../../Context';
+import Loading from '../../components/loading';
 
 class AdventureDetailsPage extends Component {
   constructor(props) {
@@ -86,15 +87,7 @@ class AdventureDetailsPage extends Component {
     const free = seats - participants;
 
     if (!id) {
-      return (
-        <Fragment>
-          <Header />
-          <section className={styles.loading}>
-            <div>Loading....</div>
-          </section>
-          <Footer />
-        </Fragment>
-      );
+      return <Loading />;
     }
 
     return (
@@ -167,7 +160,7 @@ class AdventureDetailsPage extends Component {
             <div className={styles.galery}>
               <h3>Adventure's Gallery</h3>
               {galery.map((image, index) => {
-                return <Gallery image={image} alt='Pic' />;
+                return <Gallery image={image} alt='Pic' index={index} />;
               })}
             </div>
           </section>

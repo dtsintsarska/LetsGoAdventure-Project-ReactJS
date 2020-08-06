@@ -16,7 +16,7 @@ const SingleOffer = ({
 }) => {
   return (
     <li className={styles.offert}>
-      <img src={image} alt='picture' />
+      <img src={image} alt='Adventure' />
       <section className={styles.info}>
         <div>
           <h3>{destination}</h3>

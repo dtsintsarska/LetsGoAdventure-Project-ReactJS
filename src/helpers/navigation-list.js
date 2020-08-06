@@ -5,19 +5,19 @@ const getNavigation = (user, isAdmin) => {
             link: "/adventures",
             dropdown: [{
                     title: "Mountain Adventures",
-                    link: "/adventures/mountain"
+                    link: "/adventures/search/Mountain"
                 },
                 {
                     title: "Sea Adventures",
-                    link: "/adventures/sea"
+                    link: "/adventures/search/Sea"
                 },
                 {
                     title: "Adventures Abroad",
-                    link: "/adventures/abroad"
+                    link: "/adventures/search/Abroad"
                 },
                 {
                     title: "MTB Adventures",
-                    link: "/adventures/MTB"
+                    link: "/adventures/search/MTB"
                 }
             ]
         },
@@ -45,19 +45,19 @@ const getNavigation = (user, isAdmin) => {
             link: "/adventures",
             dropdown: [{
                     title: "Mountain Adventures",
-                    link: "/adventures/mountain"
+                    link: "/adventures/search/Mountain"
                 },
                 {
                     title: "Sea Adventures",
-                    link: "/adventures/sea"
+                    link: "/adventures/search/Sea"
                 },
                 {
                     title: "Adventures Abroad",
-                    link: "/adventures/abroad"
+                    link: "/adventures/search/Abroad"
                 },
                 {
                     title: "MTB Adventures",
-                    link: "/adventures/MTB"
+                    link: "/adventures/search/MTB"
                 }
             ]
         },
@@ -91,19 +91,19 @@ const getNavigation = (user, isAdmin) => {
             link: "/adventures",
             dropdown: [{
                     title: "Mountain Adventures",
-                    link: "/adventures/mountain"
+                    link: "/adventures/search/Mountain"
                 },
                 {
                     title: "Sea Adventures",
-                    link: "/adventures/sea"
+                    link: "/adventures/search/Sea"
                 },
                 {
                     title: "Adventures Abroad",
-                    link: "/adventures/abroad"
+                    link: "/adventures/search/Abroad"
                 },
                 {
                     title: "MTB Adventures",
-                    link: "/adventures/MTB"
+                    link: "/adventures/search/MTB"
                 }
             ]
         },

@@ -56,7 +56,6 @@ const RegisterPage = () => {
           placeholder='Please type your username'
         />
         <Input
-          type='password'
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           label='Password'
@@ -65,7 +64,6 @@ const RegisterPage = () => {
           placeholder='Please type your password'
         />
         <Input
-          type='password'
           value={rePassword}
           onChange={(e) => setRepassword(e.target.value)}
           label='Repeat Password'
