@@ -7,10 +7,6 @@ import team from '../../helpers/team-list';
 import Member from '../../components/teamMember';
 
 class TeamPage extends Component {
-  constructor(props) {
-    super(props);
-  }
-
   teamMembers = team;
 
   render() {
