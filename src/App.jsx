@@ -17,7 +17,6 @@ const App = (props) => {
     setUser({
       ...user,
       loggedIn: true,
-      isAdmin,
     });
   };
 

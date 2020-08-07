@@ -15,6 +15,7 @@ class InputSearch extends Component {
     this.state = {
       result: null,
       name: '',
+      hasResult: false,
     };
   }
 
@@ -41,6 +42,12 @@ class InputSearch extends Component {
 
     const results = await response.json();
 
+    if (results.length > 0) {
+      this.setState({
+        hasResult: true,
+      });
+    }
+
     this.setState({
       result: results,
       name: regex,
@@ -48,31 +55,10 @@ class InputSearch extends Component {
   };
 
   render() {
-    const { result, name } = this.state;
+    const { result, name, hasResult } = this.state;
 
     if (!result) {
       return <Loading />;
-    }
-
-    if (result.length == 0) {
-      return (
-        <Fragment>
-          <Header />
-          <section className={styles.background}>
-            <Title title='Adventures' />
-            <h4>Live your life by a compass, not a clock!</h4>
-          </section>
-          <section className={styles.search}>
-            <Search />
-          </section>
-          <section className={styles.adventures}>
-            <div className={styles.noresult}>
-              <h3>No results found. Try again!</h3>
-            </div>
-          </section>
-          <Footer />
-        </Fragment>
-      );
     }
 
     return (
@@ -86,9 +72,14 @@ class InputSearch extends Component {
           <Search />
         </section>
         <section className={styles.adventures}>
-          <Offers title={`Result for "${name}"`} result={result} />
+          {hasResult ? (
+            <Offers title={`Result for "${name}"`} result={result} />
+          ) : (
+            <div className={styles.noresult}>
+              <h3>No results found. Try again!</h3>
+            </div>
+          )}
         </section>
-
         <Footer />
       </Fragment>
     );

@@ -1,0 +1,12 @@
+.background {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url("../../images/matterhorn.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.background h4 {
+    color: snow;
+    text-align: center;
+    font-size: 20px;
+    font-style: oblique;
+    padding-bottom: 2%;
+}

@@ -1,0 +1,82 @@
+.aside {
+    display: inline-block;
+    width: 30%;
+    padding-left: 25px;
+    margin-left: 25px;
+    font-style: italic;
+    background-color: lightgray;
+    margin-right: 1%;
+    text-align: left;
+    padding-bottom: 2%;
+    margin-bottom: 5%;
+    align-items: center;
+    vertical-align: top;
+
+}
+
+
+.infoButton {
+    margin-top: 25px;
+    text-align: center;
+}
+
+.button {
+    color: black;
+    background-color: lightgreen;
+    width: 200px;
+    height: 70px;
+    border-radius: 15px;
+    border: 1px solid white;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.button:hover {
+    background-color: #fff;
+    border: 1px solid lightgreen;
+    color: green;
+
+}
+
+
+/* Button comment  */
+
+.buttonComment {
+    color: black;
+    background-color: lightsalmon;
+    width: 200px;
+    height: 70px;
+    border-radius: 15px;
+    border: 1px solid white;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.buttonComment:hover {
+    background-color: #fff;
+    border: 1px solid lightsalmon;
+    color: salmon;
+
+}
+
+/* Delete button */
+.buttonDelete {
+    color: black;
+    background-color: red;
+    width: 200px;
+    height: 70px;
+    border-radius: 15px;
+    border: 1px solid white;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.buttonDelete:hover {
+    background-color: #fff;
+    border: 1px solid red;
+    color: red;
+
+}
