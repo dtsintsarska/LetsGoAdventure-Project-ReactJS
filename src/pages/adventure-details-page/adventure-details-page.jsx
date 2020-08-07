@@ -1,5 +1,4 @@
 import React, { Component, Fragment } from 'react';
-import { Link } from 'react-router-dom';
 import Header from '../../components/header/index';
 import Footer from '../../components/footer';
 import styles from './adventure-details.module.css';
@@ -8,6 +7,7 @@ import Paragraph from '../../components/paragraphs';
 import Gallery from '../../components/galery';
 import UserContext from '../../Context';
 import Loading from '../../components/loading';
+import Aside from '../../components/aside-offer';
 
 class AdventureDetailsPage extends Component {
   constructor(props) {
@@ -30,6 +30,7 @@ class AdventureDetailsPage extends Component {
       level: null,
       users: [],
       isEnrolled: false,
+      isAdmin: false,
     };
   }
 
@@ -50,13 +51,21 @@ class AdventureDetailsPage extends Component {
 
     const adventure = await response.json();
 
-    adventure.participants.map((part) => {
-      if (part.id.toString() === this.context.user.id.toString()) {
+    if (this.context.user.id) {
+      adventure.participants.map((part) => {
+        if (part.id.toString() === this.context.user.id.toString()) {
+          this.setState({
+            isEnrolled: true,
+          });
+        }
+      });
+
+      if (this.context.isAdmin) {
         this.setState({
-          isEnrolled: true,
+          isAdmin: true,
         });
       }
-    });
+    }
 
     this.setState({
       id: adventure._id,
@@ -75,8 +84,6 @@ class AdventureDetailsPage extends Component {
       participants: adventure.participants.length,
       users: adventure.participants,
     });
-
-    console.log(this.state.isEnrolled);
   };
 
   render() {
@@ -96,13 +103,11 @@ class AdventureDetailsPage extends Component {
       seats,
       level,
       users,
+      isAdmin,
+      isEnrolled,
     } = this.state;
 
     const free = seats - participants;
-    // console.log(this.context);
-    // console.log(this.context.user);
-    // console.log(users);
-    // if(this.context.id.toString() === )
 
     if (!id) {
       return <Loading />;
@@ -125,71 +130,25 @@ class AdventureDetailsPage extends Component {
             </p>
             <Paragraph days={days} />
           </div>
-          <aside className={styles.aside}>
-            <div className={styles.box}>
-              <section>
-                <h2>{destination}</h2>
-                <div>
-                  <strong>Country: </strong>
-                  {country}
-                </div>
-                <div>
-                  <strong>Date: </strong>
-                  {date}
-                </div>
-                <div>
-                  <strong>Category: </strong>
-                  {category}
-                </div>
-                <div>
-                  <strong>Level: </strong>
-                  {level}
-                </div>
-                <div>
-                  <strong>Days: </strong>
-                  {days}
-                </div>
-                <div>
-                  <strong>Price: </strong>
-                  {price} BGN
-                </div>
-                <div>
-                  <strong>Available seats: </strong>
-                  Only {free} left!
-                </div>
-                <div>
-                  <strong>Guide: </strong>
-                  {guide}
-                </div>
-
-                {!this.state.isEnrolled ? (
-                  <div className={styles.infoButton}>
-                    <strong>
-                      Do you want to become part of this adventure?
-                    </strong>
-                    <div>
-                      <Link to={`/adventures/enroll/${id}`}>
-                        <button type='button' className={styles.button}>
-                          Save your seat here!
-                        </button>
-                      </Link>
-                    </div>
-                  </div>
-                ) : (
-                  <div className={styles.infoButton}>
-                    <strong>You are already part of this adventure!</strong>
-                    <div>
-                      <Link to={`/adventures/comments/${id}`}>
-                        <button type='button' className={styles.buttonComment}>
-                          Leave a comment about this adventure!
-                        </button>
-                      </Link>
-                    </div>
-                  </div>
-                )}
-              </section>
-            </div>
-          </aside>
+          <Aside
+            id={id}
+            category={category}
+            country={country}
+            date={date}
+            days={days}
+            description={description}
+            destination={destination}
+            guide={guide}
+            image={image}
+            participants={participants}
+            price={price}
+            level={level}
+            free={free}
+            seats={seats}
+            users={users}
+            isAdmin={isAdmin}
+            isEnrolled={isEnrolled}
+          />
           <section>
             <div className={styles.galery}>
               <h3>Adventure's Gallery</h3>

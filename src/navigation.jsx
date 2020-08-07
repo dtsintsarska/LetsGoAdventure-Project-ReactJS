@@ -14,6 +14,7 @@ import CreateAdventurePage from './pages/create-adventure/create-adventure';
 import CategorySearch from './pages/category-adventure-page/category-search-page';
 import InputSearch from './pages/input-search-page/inputSearchPage';
 import EnrollPage from './pages/enroll-page/enrollPage';
+import DeletePage from './pages/deletePage/deletePage';
 
 const Navigation = () => {
   const context = useContext(UserContext);
@@ -38,7 +39,8 @@ const Navigation = () => {
         <Route path='/adventures/create-new'>
           {!isAdmin ? <Redirect to='/home' /> : <CreateAdventurePage />}
         </Route>
-
+        <Route path='/adventures/enroll/:id' exact component={EnrollPage} />
+        <Route path='/adventures/delete/:id' exact component={DeletePage} />
         <Route path='/adventures' exact component={AdventuresAllPage} />
         <Route path='/adventures/:id' exact component={AdventureDetailsPage} />
         <Route
@@ -51,7 +53,6 @@ const Navigation = () => {
           exact
           component={InputSearch}
         />
-        <Route path='/adventures/enroll/:id' exact component={EnrollPage} />
 
         {/* <Route component={ErrorPage} />  */}
       </Switch>
