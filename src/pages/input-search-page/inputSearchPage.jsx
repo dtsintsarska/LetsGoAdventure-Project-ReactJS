@@ -54,6 +54,27 @@ class InputSearch extends Component {
       return <Loading />;
     }
 
+    if (result.length == 0) {
+      return (
+        <Fragment>
+          <Header />
+          <section className={styles.background}>
+            <Title title='Adventures' />
+            <h4>Live your life by a compass, not a clock!</h4>
+          </section>
+          <section className={styles.search}>
+            <Search />
+          </section>
+          <section className={styles.adventures}>
+            <div className={styles.noresult}>
+              <h3>No results found. Try again!</h3>
+            </div>
+          </section>
+          <Footer />
+        </Fragment>
+      );
+    }
+
     return (
       <Fragment>
         <Header />

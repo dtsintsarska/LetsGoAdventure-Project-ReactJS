@@ -28,6 +28,8 @@ class AdventureDetailsPage extends Component {
       galery: null,
       seats: null,
       level: null,
+      users: [],
+      isEnrolled: false,
     };
   }
 
@@ -48,6 +50,14 @@ class AdventureDetailsPage extends Component {
 
     const adventure = await response.json();
 
+    adventure.participants.map((part) => {
+      if (part.id.toString() === this.context.user.id.toString()) {
+        this.setState({
+          isEnrolled: true,
+        });
+      }
+    });
+
     this.setState({
       id: adventure._id,
       category: adventure.category,
@@ -63,7 +73,10 @@ class AdventureDetailsPage extends Component {
       seats: adventure.seats,
       level: adventure.level,
       participants: adventure.participants.length,
+      users: adventure.participants,
     });
+
+    console.log(this.state.isEnrolled);
   };
 
   render() {
@@ -82,9 +95,14 @@ class AdventureDetailsPage extends Component {
       galery,
       seats,
       level,
+      users,
     } = this.state;
 
     const free = seats - participants;
+    // console.log(this.context);
+    // console.log(this.context.user);
+    // console.log(users);
+    // if(this.context.id.toString() === )
 
     if (!id) {
       return <Loading />;
@@ -143,16 +161,32 @@ class AdventureDetailsPage extends Component {
                   <strong>Guide: </strong>
                   {guide}
                 </div>
-                <div className={styles.infoButton}>
-                  <strong>Do you want to become part of this adventure?</strong>
-                  <div>
-                    <Link to={`/adventures/enroll/${id}`}>
-                      <button type='button' className={styles.button}>
-                        Save your seat here!
-                      </button>
-                    </Link>
+
+                {!this.state.isEnrolled ? (
+                  <div className={styles.infoButton}>
+                    <strong>
+                      Do you want to become part of this adventure?
+                    </strong>
+                    <div>
+                      <Link to={`/adventures/enroll/${id}`}>
+                        <button type='button' className={styles.button}>
+                          Save your seat here!
+                        </button>
+                      </Link>
+                    </div>
                   </div>
-                </div>
+                ) : (
+                  <div className={styles.infoButton}>
+                    <strong>You are already part of this adventure!</strong>
+                    <div>
+                      <Link to={`/adventures/comments/${id}`}>
+                        <button type='button' className={styles.buttonComment}>
+                          Leave a comment about this adventure!
+                        </button>
+                      </Link>
+                    </div>
+                  </div>
+                )}
               </section>
             </div>
           </aside>

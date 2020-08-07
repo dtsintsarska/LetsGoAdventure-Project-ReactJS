@@ -13,6 +13,7 @@ import AdventureDetailsPage from './pages/adventure-details-page/adventure-detai
 import CreateAdventurePage from './pages/create-adventure/create-adventure';
 import CategorySearch from './pages/category-adventure-page/category-search-page';
 import InputSearch from './pages/input-search-page/inputSearchPage';
+import EnrollPage from './pages/enroll-page/enrollPage';
 
 const Navigation = () => {
   const context = useContext(UserContext);
@@ -50,6 +51,7 @@ const Navigation = () => {
           exact
           component={InputSearch}
         />
+        <Route path='/adventures/enroll/:id' exact component={EnrollPage} />
 
         {/* <Route component={ErrorPage} />  */}
       </Switch>

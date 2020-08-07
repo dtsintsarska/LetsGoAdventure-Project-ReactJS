@@ -50,7 +50,7 @@
 .button {
     color: black;
     background-color: lightgreen;
-    width: 150px;
+    width: 200px;
     height: 70px;
     border-radius: 15px;
     border: 1px solid white;
@@ -81,4 +81,25 @@
     color: #3498b9;
     text-align: left;
     padding-left: 7%;
+}
+
+/* Button comment  */
+
+.buttonComment {
+    color: black;
+    background-color: lightsalmon;
+    width: 200px;
+    height: 70px;
+    border-radius: 15px;
+    border: 1px solid white;
+    margin: 10px;
+    cursor: pointer;
+    font-size: 17px;
+}
+
+.buttonComment:hover {
+    background-color: #fff;
+    border: 1px solid lightsalmon;
+    color: salmon;
+
 }
