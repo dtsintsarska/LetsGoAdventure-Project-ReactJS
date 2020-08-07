@@ -165,18 +165,6 @@ const CreateAdventurePage = () => {
         />
         <SubmitButton title='Submit' onClick={handleSubmit} />
       </form>
-
-      {/* <div className={styles.container}>
-        <textarea
-          value={publication}
-          onChange={(e) => setPublication(e.target.value)}
-          className={styles.textarea}
-        />
-      </div>
-      <div>
-        <SubmitButton title='Post' onClick={handleSubmit} />
-      </div> */}
-
       <Footer />
     </Fragment>
   );
