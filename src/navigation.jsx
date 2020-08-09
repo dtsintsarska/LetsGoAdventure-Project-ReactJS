@@ -15,6 +15,7 @@ import CategorySearch from './pages/category-adventure-page/category-search-page
 import InputSearch from './pages/input-search-page/inputSearchPage';
 import EnrollPage from './pages/enroll-page/enrollPage';
 import DeletePage from './pages/deletePage/deletePage';
+import LogoutPage from './pages/logout-page/logoutPage';
 
 const Navigation = () => {
   const context = useContext(UserContext);
@@ -32,6 +33,9 @@ const Navigation = () => {
         </Route>
         <Route path='/login'>
           {loggedIn ? <Redirect to='/home' /> : <LoginPage />}
+        </Route>
+        <Route path='/logout'>
+          {!loggedIn ? <Redirect to='/home' /> : <LogoutPage />}
         </Route>
         <Route path='/aboutus' exact component={AboutUsPage} />
         <Route path='/aboutus/contacts' component={Contacts} />

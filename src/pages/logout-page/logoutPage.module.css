@@ -1,0 +1,39 @@
+.background {
+    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url("https://www.moneysense.ca/wp-content/uploads/2020/07/cost-of-camping.jpg") no-repeat center;
+    background-size: cover;
+}
+
+.background h4 {
+    color: snow;
+    text-align: center;
+    font-size: 20px;
+    font-style: oblique;
+    padding-bottom: 2%;
+}
+
+.buttons :first-child {
+    display: inline;
+}
+
+.buttonNo :first-child {
+    margin-bottom: 0;
+    margin-left: 22%;
+    /* padding-bottom: 0; */
+}
+
+.buttonNo :first-child :hover {
+    color: snow;
+    background-color: lightgreen;
+    border: 1px solid snow;
+}
+
+.buttonYes :first-child {
+    margin-bottom: 12%;
+    margin-left: 22%;
+}
+
+.buttonYes :first-child :hover {
+    color: snow;
+    background-color: orangered;
+    border: 1px solid snow;
+}
