@@ -73,7 +73,7 @@ class InputSearch extends Component {
         </section>
         <section className={styles.adventures}>
           {hasResult ? (
-            <Offers title={`Result for "${name}"`} result={result} />
+            <Offers title={`Results for "${name}"`} result={result} />
           ) : (
             <div className={styles.noresult}>
               <h3>No results found. Try again!</h3>

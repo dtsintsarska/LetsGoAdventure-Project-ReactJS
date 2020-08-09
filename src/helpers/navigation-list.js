@@ -21,6 +21,11 @@ const getNavigation = (user, isAdmin) => {
                 }
             ]
         },
+
+        {
+            title: "MY PROFILE",
+            link: `/profile/${user && user.id}`
+        },
         {
             title: "ABOUT US",
             link: "/aboutus",
@@ -34,10 +39,6 @@ const getNavigation = (user, isAdmin) => {
                 }
             ]
         },
-        {
-            title: "MY PROFILE",
-            link: `/profile/${user && user.id}`
-        }
     ]
 
     const guestLinks = [{
@@ -61,6 +62,16 @@ const getNavigation = (user, isAdmin) => {
                 }
             ]
         },
+
+
+        {
+            title: "REGISTER",
+            link: "/register"
+        },
+        {
+            title: "LOGIN",
+            link: "/login"
+        },
         {
             title: "ABOUT US",
             link: "/aboutus",
@@ -73,15 +84,6 @@ const getNavigation = (user, isAdmin) => {
                     link: "/aboutus/contacts"
                 }
             ]
-        },
-
-        {
-            title: "REGISTER",
-            link: "/register"
-        },
-        {
-            title: "LOGIN",
-            link: "/login"
         },
 
     ]
@@ -107,7 +109,15 @@ const getNavigation = (user, isAdmin) => {
                 }
             ]
         },
+
         {
+            title: "MY PROFILE",
+            link: `/profile/${user && user.id}`
+        },
+        {
+            title: "CREATE NEW ADVENTURE",
+            link: "/adventures/create-new"
+        }, {
             title: "ABOUT US",
             link: "/aboutus",
             dropdown: [{
@@ -120,14 +130,6 @@ const getNavigation = (user, isAdmin) => {
                 }
             ]
         },
-        {
-            title: "MY PROFILE",
-            link: `/profile/${user && user.id}`
-        },
-        {
-            title: "CREATE NEW ADVENTURE",
-            link: "/adventures/create-new"
-        }
     ]
     const loggedIn = user && user.loggedIn
     if (loggedIn && isAdmin) {
