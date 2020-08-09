@@ -39,6 +39,10 @@ const getNavigation = (user, isAdmin) => {
                 }
             ]
         },
+        {
+            title: "LOGOUT",
+            link: '/logout'
+        }
     ]
 
     const guestLinks = [{
@@ -130,6 +134,10 @@ const getNavigation = (user, isAdmin) => {
                 }
             ]
         },
+        {
+            title: "LOGOUT",
+            link: '/logout'
+        }
     ]
     const loggedIn = user && user.loggedIn
     if (loggedIn && isAdmin) {
