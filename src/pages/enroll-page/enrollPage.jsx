@@ -1,5 +1,5 @@
 import React, { useState, Fragment, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Redirect } from 'react-router-dom';
 import styles from './enrollPage.module.css';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
@@ -45,6 +45,9 @@ const EnrollPage = (props) => {
     history.push(`/adventures/${adventureId}`);
   };
 
+  if (!context.user.loggedIn) {
+    return <Redirect to='/login' />;
+  }
   return (
     <Fragment>
       <Header />

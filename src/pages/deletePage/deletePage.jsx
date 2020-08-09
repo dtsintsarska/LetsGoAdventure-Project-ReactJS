@@ -1,5 +1,5 @@
 import React, { Fragment, useContext } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, Redirect } from 'react-router-dom';
 import styles from './deletePage.module.css';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
@@ -32,6 +32,9 @@ const DeletePage = (props) => {
     history.push('/home');
   };
 
+  if (!context.isAdmin) {
+    return <Redirect to='/home' />;
+  }
   return (
     <Fragment>
       <Header />
