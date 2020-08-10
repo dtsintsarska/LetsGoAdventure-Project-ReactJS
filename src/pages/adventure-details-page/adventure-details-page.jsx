@@ -106,12 +106,12 @@ class AdventureDetailsPage extends Component {
         </div>
       );
     } else {
-      return arrayComments.map((comment, index) => {
+      return arrayComments.map((comment) => {
         return (
           <Comment
             comment={comment.comment}
             username={comment.username}
-            index={index}
+            key={comment._id}
           />
         );
       });
@@ -142,8 +142,6 @@ class AdventureDetailsPage extends Component {
     } = this.state;
 
     const free = seats - participants;
-
-    console.log(showComments);
 
     if (!id) {
       return <Loading />;
@@ -190,7 +188,7 @@ class AdventureDetailsPage extends Component {
               <h3>Adventure's Gallery</h3>
               <div>
                 {galery.map((image, index) => {
-                  return <Gallery image={image} alt='Pic' index={index} />;
+                  return <Gallery image={image} alt='Pic' key={index} />;
                 })}
               </div>
             </div>

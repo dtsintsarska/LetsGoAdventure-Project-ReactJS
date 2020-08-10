@@ -17,6 +17,9 @@ const EnrollPage = (props) => {
   const context = useContext(UserContext);
   const history = useHistory();
 
+  const image = props.history.location.state.image;
+  const title = props.history.location.state.destination;
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -51,9 +54,12 @@ const EnrollPage = (props) => {
   return (
     <Fragment>
       <Header />
-      <section className={styles.background}>
+      <section
+        style={{ backgroundImage: `url(${image})` }}
+        className={styles.background}
+      >
         <Title title='Become a part of our next adventure' />
-        <h4>Fulfill all fields to save your seat</h4>
+        <h4>Fulfill all fields to save your seat in "{title}"</h4>
       </section>
       <form className={styles.container} onSubmit={handleSubmit}>
         <Input

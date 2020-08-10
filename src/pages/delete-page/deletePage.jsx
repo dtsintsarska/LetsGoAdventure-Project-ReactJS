@@ -12,7 +12,8 @@ const DeletePage = (props) => {
   const context = useContext(UserContext);
   const history = useHistory();
 
-  console.log(props.match.params.id);
+  const image = props.history.location.state.image;
+  const title = props.history.location.state.destination;
 
   const handleSubmit = async () => {
     const id = props.match.params.id;
@@ -38,9 +39,12 @@ const DeletePage = (props) => {
   return (
     <Fragment>
       <Header />
-      <section className={styles.background}>
+      <section
+        style={{ backgroundImage: `url(${image})` }}
+        className={styles.background}
+      >
         <Title title='' />
-        <h4>Do you really want to delete this adventure?</h4>
+        <h4>Do you really want to delete "{title}"?</h4>
         <div onClick={handleSubmit}>
           <SubmitButton title='Yes' onClick={handleSubmit} />
         </div>
