@@ -14,7 +14,7 @@ import CreateAdventurePage from './pages/create-adventure/create-adventure';
 import CategorySearch from './pages/category-adventure-page/category-search-page';
 import InputSearch from './pages/input-search-page/inputSearchPage';
 import EnrollPage from './pages/enroll-page/enrollPage';
-import DeletePage from './pages/deletePage/deletePage';
+import DeletePage from './pages/delete-page/deletePage';
 import LogoutPage from './pages/logout-page/logoutPage';
 import CommentsPage from './pages/comments-page/commentsPage';
 

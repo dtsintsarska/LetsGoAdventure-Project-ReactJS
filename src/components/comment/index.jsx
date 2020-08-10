@@ -1,10 +1,9 @@
 import React from 'react';
 import styles from './index.module.css';
 
-const Comment = ({ comment, username, index }) => {
+const Comment = ({ comment, username }) => {
   return (
     <div className={styles.container}>
-      {/* <img alt="origam" className={styles.image} src={image} /> */}
       <div className={styles.description}>{comment}</div>
       <p>
         <span className={styles.user}>

@@ -1,5 +1,5 @@
 .background {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.3)), url("../../images/matterhorn.jpg") no-repeat center;
+    background: no-repeat center;
     background-size: cover;
 }
 

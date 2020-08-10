@@ -23,8 +23,6 @@ const CommentsPage = (props) => {
     const username = context.user.username;
     const adventureId = props.match.params.id;
 
-    console.log(comment);
-
     await fetch(`http://localhost:9999/api/offers/comment/${adventureId}`, {
       method: 'POST',
       body: JSON.stringify({
