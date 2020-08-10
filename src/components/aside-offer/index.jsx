@@ -43,6 +43,7 @@ class Aside extends React.Component {
       seats,
       level,
       free,
+      image,
     } = this.state;
 
     return (
@@ -91,7 +92,12 @@ class Aside extends React.Component {
               <div className={styles.infoButton}>
                 <strong>Do you want to become part of this adventure?</strong>
                 <div>
-                  <Link to={`/adventures/enroll/${id}`}>
+                  <Link
+                    to={{
+                      pathname: `/adventures/enroll/${id}`,
+                      state: { image, destination },
+                    }}
+                  >
                     <button type='button' className={styles.button}>
                       Save your seat here!
                     </button>
@@ -105,7 +111,12 @@ class Aside extends React.Component {
                   comment?
                 </strong>
                 <div>
-                  <Link to={`/adventures/comments/${id}`}>
+                  <Link
+                    to={{
+                      pathname: `/adventures/comments/${id}`,
+                      state: { image, destination },
+                    }}
+                  >
                     <button type='button' className={styles.buttonComment}>
                       Leave a comment about this adventure!
                     </button>
@@ -115,7 +126,12 @@ class Aside extends React.Component {
             )}
             {this.state.isAdmin ? (
               <div className={styles.infoButton}>
-                <Link to={`/adventures/delete/${id}`}>
+                <Link
+                  to={{
+                    pathname: `/adventures/delete/${id}`,
+                    state: { image, destination },
+                  }}
+                >
                   <button type='button' className={styles.buttonDelete}>
                     Delete this adventure?
                   </button>

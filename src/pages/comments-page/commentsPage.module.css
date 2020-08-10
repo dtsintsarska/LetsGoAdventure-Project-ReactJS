@@ -1,0 +1,27 @@
+.background {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.background h4 {
+    color: snow;
+    text-align: center;
+    font-size: 20px;
+    font-style: oblique;
+    padding-bottom: 5%;
+}
+
+textarea {
+    width: 450px;
+    height: 150px;
+    resize: none;
+}
+
+.divComment {
+    text-align: center;
+}
+
+.divComment strong {
+    color: #3498b3;
+}

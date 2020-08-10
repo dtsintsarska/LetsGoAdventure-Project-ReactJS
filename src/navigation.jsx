@@ -16,6 +16,7 @@ import InputSearch from './pages/input-search-page/inputSearchPage';
 import EnrollPage from './pages/enroll-page/enrollPage';
 import DeletePage from './pages/deletePage/deletePage';
 import LogoutPage from './pages/logout-page/logoutPage';
+import CommentsPage from './pages/comments-page/commentsPage';
 
 const Navigation = () => {
   const context = useContext(UserContext);
@@ -44,6 +45,7 @@ const Navigation = () => {
           {!isAdmin ? <Redirect to='/home' /> : <CreateAdventurePage />}
         </Route>
         <Route path='/adventures/enroll/:id' exact component={EnrollPage} />
+        <Route path='/adventures/comments/:id' exact component={CommentsPage} />
         <Route path='/adventures/delete/:id' exact component={DeletePage} />
         <Route path='/adventures' exact component={AdventuresAllPage} />
         <Route path='/adventures/:id' exact component={AdventureDetailsPage} />

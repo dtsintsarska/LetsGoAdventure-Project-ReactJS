@@ -5,6 +5,7 @@ import styles from './adventure-details.module.css';
 import Title from '../../components/title';
 import Paragraph from '../../components/paragraphs';
 import Gallery from '../../components/galery';
+import Comment from '../../components/comment';
 import UserContext from '../../Context';
 import Loading from '../../components/loading';
 import Aside from '../../components/aside-offer';
@@ -29,8 +30,10 @@ class AdventureDetailsPage extends Component {
       seats: null,
       level: null,
       users: [],
+      comments: [],
       isEnrolled: false,
       isAdmin: false,
+      showComments: false,
     };
   }
 
@@ -83,11 +86,40 @@ class AdventureDetailsPage extends Component {
       level: adventure.level,
       participants: adventure.participants.length,
       users: adventure.participants,
+      comments: adventure.comments,
     });
   };
 
+  onClick = () => {
+    return this.setState({
+      showComments: true,
+    });
+  };
+
+  getComments = (comments) => {
+    let arrayComments = comments.reverse();
+    if (arrayComments.length == 0) {
+      return (
+        <div className={styles.noComments}>
+          No comments found! Save your seat and be the first who write comment
+          about this adventure!
+        </div>
+      );
+    } else {
+      return arrayComments.map((comment, index) => {
+        return (
+          <Comment
+            comment={comment.comment}
+            username={comment.username}
+            index={index}
+          />
+        );
+      });
+    }
+  };
+
   render() {
-    const {
+    let {
       id,
       category,
       country,
@@ -105,9 +137,13 @@ class AdventureDetailsPage extends Component {
       users,
       isAdmin,
       isEnrolled,
+      comments,
+      showComments,
     } = this.state;
 
     const free = seats - participants;
+
+    console.log(showComments);
 
     if (!id) {
       return <Loading />;
@@ -152,9 +188,20 @@ class AdventureDetailsPage extends Component {
           <section>
             <div className={styles.galery}>
               <h3>Adventure's Gallery</h3>
-              {galery.map((image, index) => {
-                return <Gallery image={image} alt='Pic' index={index} />;
-              })}
+              <div>
+                {galery.map((image, index) => {
+                  return <Gallery image={image} alt='Pic' index={index} />;
+                })}
+              </div>
+            </div>
+          </section>
+          <section>
+            <div className={styles.comments} onClick={this.onClick}>
+              <div className={styles.seeMore}>
+                <h3>See all comments about this adventure</h3>
+                <i className={styles.arrow}></i>
+              </div>
+              {showComments ? this.getComments(comments) : null}
             </div>
           </section>
         </section>
