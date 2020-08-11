@@ -17,6 +17,7 @@ import EnrollPage from './pages/enroll-page/enrollPage';
 import DeletePage from './pages/delete-page/deletePage';
 import LogoutPage from './pages/logout-page/logoutPage';
 import CommentsPage from './pages/comments-page/commentsPage';
+import ProfilePage from './pages/profile-page/profilePage';
 
 const Navigation = () => {
   const context = useContext(UserContext);
@@ -37,6 +38,9 @@ const Navigation = () => {
         </Route>
         <Route path='/logout'>
           {!loggedIn ? <Redirect to='/home' /> : <LogoutPage />}
+        </Route>
+        <Route path='/profile/:id'>
+          {!loggedIn ? <Redirect to='/login' /> : <ProfilePage />}
         </Route>
         <Route path='/aboutus' exact component={AboutUsPage} />
         <Route path='/aboutus/contacts' component={Contacts} />
