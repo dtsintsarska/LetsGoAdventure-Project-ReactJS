@@ -1,0 +1,55 @@
+.background {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url("../../images/Wanderlust_Hiking_on_Legendary_Trails_book_gestalten_05_2000x.jpg") no-repeat center;
+    background-size: cover;
+    background-position: center;
+}
+
+.background h4 {
+    color: snow;
+    text-align: center;
+    font-size: 20px;
+    font-style: oblique;
+    padding-bottom: 2%;
+}
+
+.container {
+    background-color: white;
+    display: inline-block
+}
+
+.content {
+    float: right;
+    text-align: justify;
+    padding-right: 5%;
+    width: 65%;
+    padding-top: 0%;
+    /* padding-left: 35%; */
+}
+
+.title {
+    text-align: center;
+    font-size: 25px;
+    font-style: italic;
+    margin-bottom: 4%;
+    color: #3498b3
+}
+
+
+.list {
+    font-size: 14px;
+
+}
+
+.list li {
+    display: inline-block;
+    width: 250px;
+}
+
+.list img {
+    width: 200px;
+    height: 200px;
+}
+
+.list p {
+    font-size: 15px;
+}

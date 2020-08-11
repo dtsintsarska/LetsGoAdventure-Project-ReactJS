@@ -98,7 +98,7 @@ class AdventureDetailsPage extends Component {
 
   getComments = (comments) => {
     let arrayComments = comments.reverse();
-    if (arrayComments.length == 0) {
+    if (arrayComments.length === 0) {
       return (
         <div className={styles.noComments}>
           No comments found! Save your seat and be the first who write comment
