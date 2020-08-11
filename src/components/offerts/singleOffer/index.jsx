@@ -1,19 +1,31 @@
 import React from 'react';
+import { useState } from 'react';
 import styles from './index.module.css';
 import Button from '../../button-link';
+import Participants from '../../participant';
 
 const SingleOffer = ({
   image,
   destination,
   date,
-  price,
   guide,
   category,
   days,
-  description,
   country,
   _id,
+  isAdmin,
+  participants,
 }) => {
+  const [show, setShow] = useState(false);
+
+  const onClick = () => {
+    if (show) {
+      setShow(false);
+    } else {
+      setShow(true);
+    }
+  };
+
   return (
     <li className={styles.offert}>
       <img src={image} alt='Adventure' />
@@ -30,7 +42,19 @@ const SingleOffer = ({
         <div>Country: {country}</div>
         <div>Guide: {guide}</div>
         <div>Category: {category}</div>
-        <Button title='See more' href={`/adventures/${_id}`} />
+        <div className={styles.buttons}>
+          <div>
+            <Button title='See more' href={`/adventures/${_id}`} />
+          </div>
+          {isAdmin ? (
+            <div onClick={onClick}>
+              <Button title='Participants' onClick={onClick} />
+            </div>
+          ) : null}
+        </div>
+        <div className={styles.participants}>
+          {show ? <Participants participants={participants} /> : null}
+        </div>
       </section>
     </li>
   );

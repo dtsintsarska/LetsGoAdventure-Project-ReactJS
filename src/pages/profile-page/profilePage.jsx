@@ -1,5 +1,12 @@
-import React, { useState, useEffect, useCallback, Fragment } from 'react';
+import React, {
+  useState,
+  useEffect,
+  useCallback,
+  useContext,
+  Fragment,
+} from 'react';
 import { useParams, useHistory } from 'react-router-dom';
+import UserContext from '../../Context';
 import Loading from '../../components/loading';
 import styles from './profilePage.module.css';
 import Header from '../../components/header';
@@ -14,6 +21,7 @@ const ProfilePage = () => {
   const [adventureNum, setAdventureNum] = useState(null);
   const params = useParams();
   const history = useHistory();
+  const context = useContext(UserContext);
 
   const getData = useCallback(async () => {
     const id = params.id;
@@ -53,7 +61,13 @@ const ProfilePage = () => {
           </div>
           <div className={styles.list}>
             {adventures.map((ad) => {
-              return <SingleOffer {...ad} key={ad.destination} />;
+              return (
+                <SingleOffer
+                  {...ad}
+                  isAdmin={context.isAdmin}
+                  key={ad.destination}
+                />
+              );
             })}
           </div>
         </div>

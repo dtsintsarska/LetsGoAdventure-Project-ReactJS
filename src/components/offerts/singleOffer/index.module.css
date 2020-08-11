@@ -2,6 +2,7 @@
     width: 400px;
     text-decoration: none;
     display: inline-block;
+    position: relative;
 }
 
 .offert:not(:last-child) {
@@ -55,4 +56,9 @@
 .more button:hover {
     background: #3498b9;
     color: white;
+}
+
+.buttons div {
+    display: inline-block;
+    width: 120px;
 }
