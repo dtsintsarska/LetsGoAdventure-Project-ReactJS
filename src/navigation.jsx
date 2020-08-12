@@ -18,6 +18,7 @@ import DeletePage from './pages/delete-page/deletePage';
 import LogoutPage from './pages/logout-page/logoutPage';
 import CommentsPage from './pages/comments-page/commentsPage';
 import ProfilePage from './pages/profile-page/profilePage';
+import ErrorPage from './pages/error-page/errorPage';
 
 const Navigation = () => {
   const context = useContext(UserContext);
@@ -28,31 +29,36 @@ const Navigation = () => {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path='/' exact component={HomePage} />
-        <Route path='/home' component={HomePage} />
-        <Route path='/register'>
+        <Route exact path='/' exact component={HomePage} />
+        <Route exact path='/home' component={HomePage} />
+        <Route exact path='/register'>
           {loggedIn ? <Redirect to='/home' /> : <RegisterPage />}
         </Route>
-        <Route path='/login'>
+        <Route exact path='/login'>
           {loggedIn ? <Redirect to='/home' /> : <LoginPage />}
         </Route>
-        <Route path='/logout'>
+        <Route exact path='/logout'>
           {!loggedIn ? <Redirect to='/home' /> : <LogoutPage />}
         </Route>
-        <Route path='/profile/:id'>
+        <Route exact path='/profile/:id'>
           {!loggedIn ? <Redirect to='/login' /> : <ProfilePage />}
         </Route>
         <Route path='/aboutus' exact component={AboutUsPage} />
         <Route path='/aboutus/contacts' component={Contacts} />
         <Route path='/aboutus/team' component={TeamPage} />
-        <Route path='/adventures/create-new'>
+        <Route exact path='/adventures/create-new'>
           {!isAdmin ? <Redirect to='/home' /> : <CreateAdventurePage />}
         </Route>
-        <Route path='/adventures/enroll/:id' exact component={EnrollPage} />
-        <Route path='/adventures/comments/:id' exact component={CommentsPage} />
-        <Route path='/adventures/delete/:id' exact component={DeletePage} />
-        <Route path='/adventures' exact component={AdventuresAllPage} />
-        <Route path='/adventures/:id' exact component={AdventureDetailsPage} />
+        <Route
+          exact
+          path='/adventures/enroll/:id'
+          exact
+          component={EnrollPage}
+        />
+        <Route exact path='/adventures/comments/:id' component={CommentsPage} />
+        <Route exact path='/adventures/delete/:id' component={DeletePage} />
+        <Route exact path='/adventures' component={AdventuresAllPage} />
+        <Route exact path='/adventures/:id' component={AdventureDetailsPage} />
         <Route
           path='/adventures/search/:category'
           exact
@@ -63,8 +69,7 @@ const Navigation = () => {
           exact
           component={InputSearch}
         />
-
-        {/* <Route component={ErrorPage} />  */}
+        <Route component={ErrorPage} />
       </Switch>
     </BrowserRouter>
   );
