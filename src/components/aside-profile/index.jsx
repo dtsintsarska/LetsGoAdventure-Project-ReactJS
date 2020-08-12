@@ -17,10 +17,10 @@ class AsideProfile extends React.Component {
   getTypeUser = (number) => {
     let result = 'Regular User';
 
-    if (number >= 1) {
-      result = 'Silver User';
-    } else if (number >= 3) {
+    if (number >= 3) {
       result = 'Golden User';
+    } else if (number >= 1) {
+      result = 'Silver User';
     }
     return result;
   };
