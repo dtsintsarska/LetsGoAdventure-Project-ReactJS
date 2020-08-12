@@ -19,10 +19,25 @@ const CreateAdventurePage = () => {
   const [level, setLevel] = useState('');
   const [days, setDays] = useState('');
   const [seats, setSeats] = useState('');
-  const [galery, setGallery] = useState([]);
+  const [galleryPhotoOne, setGalleryPhotoOne] = useState('');
+  const [galleryPhotoTwo, setGalleryPhotoTwo] = useState('');
+  const [galleryPhotoThree, setGalleryPhotoThree] = useState('');
+  const [galleryPhotoFour, setGalleryPhotoFour] = useState('');
 
   const handleSubmit = async (e) => {
-    let images = galery.split(', ');
+    let images = [];
+    if (galleryPhotoOne) {
+      images.push(galleryPhotoOne);
+    }
+    if (galleryPhotoTwo) {
+      images.push(galleryPhotoTwo);
+    }
+    if (galleryPhotoThree) {
+      images.push(galleryPhotoThree);
+    }
+    if (galleryPhotoFour) {
+      images.push(galleryPhotoFour);
+    }
 
     await fetch('http://localhost:9999/api/offers/create', {
       method: 'POST',
@@ -48,7 +63,6 @@ const CreateAdventurePage = () => {
     setDestination('');
     setCountry('');
     setDescription('');
-    setGallery([]);
     setSeats('');
     setImage('');
     setLevel('');
@@ -57,6 +71,23 @@ const CreateAdventurePage = () => {
     setDays('');
     setCategory('');
     setGuide('');
+  };
+
+  const openWidget = (event, update) => {
+    event.preventDefault();
+    const widget = window.cloudinary.createUploadWidget(
+      {
+        cloudName: 'dvk3zertv',
+        uploadPreset: 'letsgoadventure',
+      },
+      (error, result) => {
+        if (result.event === 'success') {
+          update(result.info.url);
+        }
+      }
+    );
+
+    widget.open();
   };
 
   return (
@@ -97,14 +128,6 @@ const CreateAdventurePage = () => {
           label='Guide'
           id='guide'
           placeholder='Name of the guide/guides'
-        />
-        <Input
-          type='text'
-          value={image}
-          onChange={(e) => setImage(e.target.value)}
-          label='Image'
-          id='image'
-          placeholder='Image should starts with "http://'
         />
         <Input
           type='text'
@@ -155,16 +178,76 @@ const CreateAdventurePage = () => {
           id='level'
           placeholder='Choose level - easy, advanced, experts'
         />
-        <Input
-          type='text'
-          value={galery}
-          onChange={(e) => setGallery(e.target.value)}
-          label='Gallery'
-          id='gallery'
-          placeholder='Choose 4 photos for adventure gallery separated by comma and single space'
-        />
+
+        <div className={styles.upload}>
+          <div>
+            Gallery Image:
+            <button
+              onClick={(e) => {
+                openWidget(e, setGalleryPhotoOne);
+              }}
+            >
+              Upload Image
+            </button>
+            {galleryPhotoOne ? (
+              <img src={galleryPhotoOne} alt='Gallery1' />
+            ) : null}
+          </div>
+          <div>
+            Gallery Image:
+            <button
+              onClick={(e) => {
+                openWidget(e, setGalleryPhotoTwo);
+              }}
+            >
+              Upload Image
+            </button>
+            {galleryPhotoTwo ? (
+              <img src={galleryPhotoTwo} alt='Gallery2' />
+            ) : null}
+          </div>
+          <div>
+            Gallery Image:
+            <button
+              onClick={(e) => {
+                openWidget(e, setGalleryPhotoThree);
+              }}
+            >
+              Upload Image
+            </button>
+            {galleryPhotoThree ? (
+              <img src={galleryPhotoThree} alt='Gallery3' />
+            ) : null}
+          </div>
+          <div>
+            Gallery Image:
+            <button
+              onClick={(e) => {
+                openWidget(e, setGalleryPhotoFour);
+              }}
+            >
+              Upload Image
+            </button>
+            {galleryPhotoFour ? (
+              <img src={galleryPhotoFour} alt='Gallery4' />
+            ) : null}
+          </div>
+          <div>
+            Main Image:
+            <button
+              onClick={(e) => {
+                openWidget(e, setImage);
+              }}
+            >
+              Upload Image
+            </button>
+            {image ? <img src={image} alt='Main' /> : null}
+          </div>
+        </div>
+
         <SubmitButton title='Submit' onClick={handleSubmit} />
       </form>
+
       <Footer />
     </Fragment>
   );
