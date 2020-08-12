@@ -1,5 +1,4 @@
 import React from 'react';
-// import Link from '../link'
 import styles from './index.module.css';
 
 const Welcome = () => {
