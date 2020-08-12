@@ -118,7 +118,7 @@ class Aside extends React.Component {
                     }}
                   >
                     <button type='button' className={styles.buttonComment}>
-                      Leave a comment about this adventure!
+                      Write a comment about this adventure!
                     </button>
                   </Link>
                 </div>
