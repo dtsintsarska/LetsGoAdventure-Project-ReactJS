@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.min.css';
+
 import UserContext from './Context';
 import getCookie from './helpers/cookie';
 import adminList from './helpers/admin';
 import Loading from './components/loading';
+
+toast.configure();
 
 const App = (props) => {
   const [user, setUser] = useState({});

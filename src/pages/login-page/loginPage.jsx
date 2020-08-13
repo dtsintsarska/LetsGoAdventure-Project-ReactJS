@@ -1,5 +1,6 @@
 import React, { useContext, useState, Fragment } from 'react';
 import { useHistory } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import Title from '../../components/title';
 import SubmitButton from '../../components/submit-button';
 import styles from './loginPage.module.css';
@@ -9,6 +10,7 @@ import Input from '../../components/input/index';
 import Link from '../../components/link';
 import authenticate from '../../helpers/authenticate';
 import UserContext from '../../Context';
+import loginValidator from '../../helpers/loginValidator';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
@@ -19,6 +21,10 @@ const LoginPage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    if (!loginValidator(username, password)) {
+      return;
+    }
+
     await authenticate(
       'http://localhost:9999/api/user/login',
       {
@@ -27,10 +33,12 @@ const LoginPage = () => {
       },
       (user) => {
         context.logIn(user);
+        toast.success(`Welcome, ${username}!`);
         history.push('/');
       },
       (e) => {
         console.log('Error', e);
+        toast.error('Wrong username or password!');
       }
     );
   };
