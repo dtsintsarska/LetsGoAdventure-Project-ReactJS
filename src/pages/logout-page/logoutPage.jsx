@@ -1,5 +1,6 @@
 import React, { Fragment, useContext } from 'react';
 import { useHistory } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import styles from './logoutPage.module.css';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
@@ -13,6 +14,7 @@ const LogoutPage = () => {
 
   const handleYes = () => {
     context.logOut();
+    toast.success('You have been successfully logged out!');
     history.push('/');
   };
 

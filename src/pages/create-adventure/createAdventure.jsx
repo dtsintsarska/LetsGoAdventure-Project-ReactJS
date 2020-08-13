@@ -1,4 +1,6 @@
 import React, { useState, Fragment } from 'react';
+import { useHistory } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import styles from './create-adventure.module.css';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
@@ -6,8 +8,10 @@ import Input from '../../components/input';
 import Title from '../../components/title';
 import SubmitButton from '../../components/submit-button';
 import getCookie from '../../helpers/cookie';
+import createAdventureValidator from '../../helpers/createAdventureValidator';
 
 const CreateAdventurePage = () => {
+  const history = useHistory();
   const [destination, setDestination] = useState('');
   const [country, setCountry] = useState('');
   const [description, setDescription] = useState('');
@@ -25,6 +29,7 @@ const CreateAdventurePage = () => {
   const [galleryPhotoFour, setGalleryPhotoFour] = useState('');
 
   const handleSubmit = async (e) => {
+    e.preventDefault();
     let images = [];
     if (galleryPhotoOne) {
       images.push(galleryPhotoOne);
@@ -37,6 +42,25 @@ const CreateAdventurePage = () => {
     }
     if (galleryPhotoFour) {
       images.push(galleryPhotoFour);
+    }
+
+    console.log(category);
+    if (
+      !createAdventureValidator(
+        destination,
+        description,
+        country,
+        category,
+        guide,
+        days,
+        seats,
+        level,
+        price,
+        image,
+        date
+      )
+    ) {
+      return;
     }
 
     await fetch('http://localhost:9999/api/offers/create', {
@@ -71,6 +95,9 @@ const CreateAdventurePage = () => {
     setDays('');
     setCategory('');
     setGuide('');
+
+    toast.success('Successfully create new adventure!');
+    history.push(`/adventures`);
   };
 
   const openWidget = (event, update) => {

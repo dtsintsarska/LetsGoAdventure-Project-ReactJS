@@ -1,5 +1,6 @@
 import React, { useState, useContext, Fragment } from 'react';
 import { useHistory } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import Title from '../../components/title';
 import SubmitButton from '../../components/submit-button';
 import styles from './index.module.css';
@@ -9,6 +10,7 @@ import Input from '../../components/input/index';
 import Link from '../../components/link';
 import authenticate from '../../helpers/authenticate';
 import UserContext from '../../Context';
+import registerValidator from '../../helpers/registerValidator';
 
 const RegisterPage = () => {
   const [username, setUsername] = useState('');
@@ -20,25 +22,26 @@ const RegisterPage = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (password !== rePassword) {
-      history.push('/register');
-      alert('Passwords should match!');
-    } else {
-      await authenticate(
-        'http://localhost:9999/api/user/register',
-        {
-          username,
-          password,
-        },
-        (user) => {
-          context.logIn(user);
-          history.push('/');
-        },
-        (e) => {
-          console.log('Error', e);
-        }
-      );
+    if (!registerValidator(username, password, rePassword)) {
+      return;
     }
+
+    await authenticate(
+      'http://localhost:9999/api/user/register',
+      {
+        username,
+        password,
+      },
+      (user) => {
+        context.logIn(user);
+        toast.success('Successfully create account!');
+        history.push('/');
+      },
+      (e) => {
+        console.log('Error', e);
+        toast.error('Username is already taken!');
+      }
+    );
   };
 
   return (

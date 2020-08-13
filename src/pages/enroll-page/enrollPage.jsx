@@ -1,5 +1,6 @@
 import React, { useState, Fragment, useContext } from 'react';
 import { useHistory, Redirect } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import styles from './enrollPage.module.css';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
@@ -8,6 +9,7 @@ import Title from '../../components/title';
 import SubmitButton from '../../components/submit-button';
 import getCookie from '../../helpers/cookie';
 import UserContext from '../../Context';
+import enrollValidator from '../../helpers/enrollValidator';
 
 const EnrollPage = (props) => {
   const [firstName, setFirstName] = useState('');
@@ -22,6 +24,10 @@ const EnrollPage = (props) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (!enrollValidator(firstName, lastName, phone, email)) {
+      return;
+    }
 
     const id = context.user.id;
     const adventureId = props.match.params.id;
@@ -45,6 +51,7 @@ const EnrollPage = (props) => {
     setFirstName('');
     setLastName('');
     setPhone('');
+    toast.success('Welcome on board to your next adventure with us!');
     history.push(`/adventures/${adventureId}`);
   };
 
@@ -92,7 +99,7 @@ const EnrollPage = (props) => {
           onChange={(e) => setPhone(e.target.value)}
           label='Phone'
           id='phone'
-          placeholder='Type your phone'
+          placeholder='Type your phone starts with +359'
         />
 
         <SubmitButton title='Submit' onClick={handleSubmit} />

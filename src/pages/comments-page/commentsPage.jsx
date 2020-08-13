@@ -1,5 +1,6 @@
 import React, { useState, Fragment, useContext } from 'react';
 import { useHistory, Redirect } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import styles from './commentsPage.module.css';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
@@ -36,6 +37,7 @@ const CommentsPage = (props) => {
       },
     });
     setComment('');
+    toast.success('Successfully post comment!');
     history.push(`/adventures/${adventureId}`);
   };
 
