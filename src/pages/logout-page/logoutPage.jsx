@@ -14,7 +14,9 @@ const LogoutPage = () => {
 
   const handleYes = () => {
     context.logOut();
-    toast.success('You have been successfully logged out!');
+    toast.success('You have been successfully logged out!', {
+      position: 'bottom-center',
+    });
     history.push('/');
   };
 

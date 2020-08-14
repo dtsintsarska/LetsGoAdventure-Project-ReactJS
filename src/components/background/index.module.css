@@ -2,6 +2,7 @@
 .background {
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6)), url("../../images/NOMADasaurus-Adventure-Travel-Photography-Blog.jpg") no-repeat center;
     background-size: cover;
+
 }
 
 .background h1 {
@@ -9,11 +10,14 @@
     color: white;
     font-size: 45px;
     padding: 200px 0 50px 100px;
+    padding-bottom: 10%;
+    padding-top: 15%;
+    padding-left: 5%;
     width: 500px;
     letter-spacing: 1px;
 }
 
-.background button {
+/* .background button {
     margin: 0 0 200px 100px;
     padding: 10px 15px;
     font-size: 26px;
@@ -22,11 +26,11 @@
     border: none;
     border: 2px solid white;
     border-radius: 5rem;
-}
+} */
 
-.background button:hover {
+/* .background button:hover {
     background: #3498b9;
     color: white;
     border-color: #3498b9;
     cursor: pointer;
-}
+} */

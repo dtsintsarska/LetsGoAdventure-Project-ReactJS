@@ -2,18 +2,22 @@ import { toast } from 'react-toastify';
 
 function registerValidator(username, password, rePassword) {
   if (username === '' || username.length < 3) {
-    toast.error('Username should be at least 3 characters long!');
+    toast.error('Username should be at least 3 characters long!', {
+      position: 'bottom-center',
+    });
     return false;
   }
 
   if (password) {
     if (password === '' || password.length < 6) {
-      toast.error('Password must be at least 6 characters long');
+      toast.error('Password must be at least 6 characters long', {
+        position: 'bottom-center',
+      });
       return false;
     }
   }
   if (password !== rePassword) {
-    toast.error('Passwords do not match');
+    toast.error('Passwords do not match', { position: 'bottom-center' });
     return false;
   }
 

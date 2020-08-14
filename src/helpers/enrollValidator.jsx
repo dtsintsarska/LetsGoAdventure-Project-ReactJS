@@ -7,23 +7,29 @@ function enrollValidator(firstName, lastName, phone, email) {
 
   if (firstName === '' || firstName.length < 3) {
     toast.error(
-      'First Name is required and should be at least 3 characters long'
+      'First Name is required and should be at least 3 characters long',
+      { position: 'bottom-center' }
     );
     return false;
   }
   if (lastName === '' || lastName.length < 3) {
     toast.error(
-      'Last Name is required and should be at least 3 characters long'
+      'Last Name is required and should be at least 3 characters long',
+      { position: 'bottom-center' }
     );
     return false;
   }
   if (!phone.startsWith('+359')) {
-    toast.error('Phone number must start with +359');
+    toast.error('Phone number must start with +359', {
+      position: 'bottom-center',
+    });
     return false;
   }
 
   if (!emailRegex.test(email) || email === '') {
-    toast.error('Please provide a correct email address');
+    toast.error('Please provide a correct email address', {
+      position: 'bottom-center',
+    });
     return false;
   }
 

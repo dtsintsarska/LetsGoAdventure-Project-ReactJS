@@ -26,6 +26,7 @@
     padding-right: 10%;
     width: 50%;
     padding-top: 0%;
+    padding-bottom: 0%;
     /* padding-left: 35%; */
 }
 
@@ -34,39 +35,46 @@
     padding-top: 2%;
     padding-left: 1%;
     margin-top: 0;
+    text-align: center;
+}
 
+.galery div {
+    padding-bottom: 1%;
+    height: 200px;
 }
 
 .galery h3 {
     color: #3498b9;
-    /* text-align: center; */
-    padding-left: 58%;
+    text-align: center;
+    /* padding-left: 58%; */
     margin-top: 0;
     margin-bottom: 4%;
     padding-top: 0;
+    font-size: 22px;
 }
 
-
-/* Arrow down */
-
-.arrow {
-    border: solid #3498b9;
-    border-width: 0 3px 3px 0;
-    display: inline-block;
-    padding: 5px;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    margin-left: 50%;
-    margin-bottom: 2%;
-    cursor: pointer;
-}
-
-.seeMore h3 {
-    color: #3498b9;
+/* Comments Button */
+.comments {
     text-align: center;
-    margin-top: 2%;
-    margin-bottom: 0;
+}
+
+.commentsButton {
+    background: #3498b9;
+    color: snow;
+    padding: 1%;
+    width: 25%;
+    border-radius: 15px;
+    border: none;
+    border: 1px solid white;
+    margin: 10px;
     cursor: pointer;
+    font-size: 18px;
+}
+
+.commentsButton:hover {
+    background: #fff;
+    border: 1px solid #3498b9;
+    color: #3498b9;
 }
 
 .noComments {

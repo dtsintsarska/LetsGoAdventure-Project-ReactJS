@@ -12,10 +12,6 @@ const getNavigation = (user, isAdmin) => {
                     link: "/adventures/search/Sea"
                 },
                 {
-                    title: "Adventures Abroad",
-                    link: "/adventures/search/Abroad"
-                },
-                {
                     title: "MTB Adventures",
                     link: "/adventures/search/MTB"
                 }
@@ -55,10 +51,6 @@ const getNavigation = (user, isAdmin) => {
                 {
                     title: "Sea Adventures",
                     link: "/adventures/search/Sea"
-                },
-                {
-                    title: "Adventures Abroad",
-                    link: "/adventures/search/Abroad"
                 },
                 {
                     title: "MTB Adventures",
@@ -102,10 +94,6 @@ const getNavigation = (user, isAdmin) => {
                 {
                     title: "Sea Adventures",
                     link: "/adventures/search/Sea"
-                },
-                {
-                    title: "Adventures Abroad",
-                    link: "/adventures/search/Abroad"
                 },
                 {
                     title: "MTB Adventures",

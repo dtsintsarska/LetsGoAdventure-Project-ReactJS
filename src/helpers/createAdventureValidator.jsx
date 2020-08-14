@@ -19,59 +19,75 @@ const createAdventureValidator = (
 
   if (destination.length <= 2 || destination === '') {
     toast.error(
-      'Destionation is required and must be at least 3 characters long'
+      'Destionation is required and must be at least 3 characters long',
+      { position: 'bottom-center' }
     );
     return false;
   }
 
   if (category === '' || !allowedCategories.includes(category)) {
-    toast.error('Category must be one of the following: MTB, Mountain or Sea');
+    toast.error('Category must be one of the following: MTB, Mountain or Sea', {
+      position: 'bottom-center',
+    });
     return false;
   }
   if (description.length <= 10 || description === '') {
-    toast.error('Description is required and must be at least 10 chars long');
+    toast.error('Description is required and must be at least 10 chars long', {
+      position: 'bottom-center',
+    });
     return false;
   }
 
   if (level === '' || !allowedLevels.includes(level)) {
     toast.error(
-      'Level must be one of the following: easy, advanced or experts'
+      'Level must be one of the following: easy, advanced or experts',
+      { position: 'bottom-center' }
     );
     return false;
   }
 
   if (country.length <= 2 || country === '') {
-    toast.error('Country is required and must be at least 3 characters long');
+    toast.error('Country is required and must be at least 3 characters long', {
+      position: 'bottom-center',
+    });
     return false;
   }
 
   if (guide.length <= 2 || guide === '') {
-    toast.error('Guide is required and must be at least 3 characters long');
+    toast.error('Guide is required and must be at least 3 characters long', {
+      position: 'bottom-center',
+    });
     return false;
   }
 
   if (!image.startsWith('http')) {
-    toast.error('Image must be a valid url - please upload valid photo');
+    toast.error('Image must be a valid url - please upload valid photo', {
+      position: 'bottom-center',
+    });
     return false;
   }
 
   if (!dateRegex.test(date) || date === '') {
-    toast.error('Date is required and must be in format dd month yyyy');
+    toast.error('Date is required and must be in format dd month yyyy', {
+      position: 'bottom-center',
+    });
     return false;
   }
 
   if (price < 0 || price === '') {
-    toast.error('Price must be positive number');
+    toast.error('Price must be positive number', { position: 'bottom-center' });
     return false;
   }
 
   if (seats < 0 || seats === '') {
-    toast.error('Maximum number or participants must be positive number');
+    toast.error('Maximum number or participants must be positive number', {
+      position: 'bottom-center',
+    });
     return false;
   }
 
   if (days < 0 || days === '') {
-    toast.error('Days must be positive number');
+    toast.error('Days must be positive number', { position: 'bottom-center' });
     return false;
   }
 

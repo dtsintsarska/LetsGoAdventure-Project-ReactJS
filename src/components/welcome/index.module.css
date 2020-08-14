@@ -4,13 +4,7 @@
     text-align: center;
     width: 70%;
     margin: 0 auto;
-    padding: 50px 0;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    font-size: 18px;
 }
-
-/*.welcome h2{
-    font-family: 'PT Serif', serif;
-    font-size: 32px;
-    letter-spacing: 2px;
-    font-style: italic;
-    margin: 0;
-}*/

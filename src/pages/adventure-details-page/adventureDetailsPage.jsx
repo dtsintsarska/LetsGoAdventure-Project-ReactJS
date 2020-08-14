@@ -91,6 +91,11 @@ class AdventureDetailsPage extends Component {
   };
 
   onClick = () => {
+    if (this.state.showComments) {
+      return this.setState({
+        showComments: false,
+      });
+    }
     return this.setState({
       showComments: true,
     });
@@ -194,12 +199,11 @@ class AdventureDetailsPage extends Component {
             </div>
           </section>
           <section>
-            <div className={styles.comments} onClick={this.onClick}>
-              <div className={styles.seeMore}>
-                <h3>See all comments about this adventure</h3>
-                <i className={styles.arrow}></i>
-              </div>
-              {showComments ? this.getComments(comments) : null}
+            <div className={styles.comments}>
+              <button className={styles.commentsButton} onClick={this.onClick}>
+                See all comments about this adventure
+              </button>
+              <div>{showComments ? this.getComments(comments) : null}</div>
             </div>
           </section>
         </section>

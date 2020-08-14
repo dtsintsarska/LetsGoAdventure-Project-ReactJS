@@ -7,7 +7,6 @@ const Background = () => {
   return (
     <section className={styles.background}>
       <h1>Live your life by a compass, not a clock!</h1>
-      <button>LEARN MORE</button>
     </section>
   );
 };

@@ -51,7 +51,9 @@ const EnrollPage = (props) => {
     setFirstName('');
     setLastName('');
     setPhone('');
-    toast.success('Welcome on board to your next adventure with us!');
+    toast.success('Welcome on board to your next adventure with us!', {
+      position: 'bottom-center',
+    });
     history.push(`/adventures/${adventureId}`);
   };
 

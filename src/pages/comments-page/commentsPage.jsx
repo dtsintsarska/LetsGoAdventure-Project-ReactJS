@@ -37,7 +37,7 @@ const CommentsPage = (props) => {
       },
     });
     setComment('');
-    toast.success('Successfully post comment!');
+    toast.success('Successfully post comment!', { position: 'bottom-center' });
     history.push(`/adventures/${adventureId}`);
   };
 

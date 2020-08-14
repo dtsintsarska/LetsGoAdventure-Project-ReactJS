@@ -8,7 +8,7 @@ const Advantages = () => {
   return (
     <section className={styles.advantages}>
       <h2>What makes us different?</h2>
-      <ul>
+      <ul className={styles.ul}>
         {list.map((element) => {
           return (
             <AdvantageComponent
