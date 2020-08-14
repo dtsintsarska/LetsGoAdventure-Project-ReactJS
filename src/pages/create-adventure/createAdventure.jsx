@@ -96,7 +96,9 @@ const CreateAdventurePage = () => {
     setCategory('');
     setGuide('');
 
-    toast.success('Successfully create new adventure!');
+    toast.success('Successfully create new adventure!', {
+      position: 'bottom-center',
+    });
     history.push(`/adventures`);
   };
 
@@ -187,7 +189,7 @@ const CreateAdventurePage = () => {
           onChange={(e) => setCategory(e.target.value)}
           label='Category'
           id='category'
-          placeholder='Choose category - MTB, Mountain, Sea or Abroad'
+          placeholder='Choose category - MTB, Mountain or Sea'
         />
         <Input
           type='text'

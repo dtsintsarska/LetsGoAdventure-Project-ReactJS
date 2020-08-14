@@ -4,7 +4,7 @@ import styles from './index.module.css';
 const Welcome = () => {
   return (
     <section className={styles.welcome}>
-      <h2>Welcome to "Let's Go Adventure" Club!</h2>
+      <h2>Welcome to "Let's Go Adventure"!</h2>
       <p>
         Our value is in the quality of the experience we provide. The Let's Go
         Adventure Club, as a business, is an extension of who we, the staff, are

@@ -7,6 +7,7 @@
     position: relative;
     margin: 40px;
     float: left;
+    border-radius: 1%;
 }
 
 .container:after {
@@ -39,12 +40,6 @@
 }
 
 .user {
-
     text-align: left;
     padding-right: 1%;
-}
-
-.image {
-    width: 32px;
-    height: 32px;
 }

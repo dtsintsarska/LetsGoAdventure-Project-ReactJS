@@ -107,7 +107,7 @@ class Aside extends React.Component {
             ) : (
               <div className={styles.infoButton}>
                 <strong>
-                  You are already part of this adventure! Do you want to
+                  You are already part of this adventure! Do you want to post a
                   comment?
                 </strong>
                 <div>

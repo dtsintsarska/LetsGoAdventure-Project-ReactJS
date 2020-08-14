@@ -34,12 +34,16 @@ const RegisterPage = () => {
       },
       (user) => {
         context.logIn(user);
-        toast.success('Successfully create account!');
+        toast.success('Successfully create account!', {
+          position: 'bottom-center',
+        });
         history.push('/');
       },
       (e) => {
         console.log('Error', e);
-        toast.error('Username is already taken!');
+        toast.error('Username is already taken!', {
+          position: 'bottom-center',
+        });
       }
     );
   };

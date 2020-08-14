@@ -1,5 +1,6 @@
 import React, { Fragment, useContext } from 'react';
 import { useHistory, Redirect } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import styles from './deletePage.module.css';
 import Header from '../../components/header';
 import Footer from '../../components/footer';
@@ -25,7 +26,9 @@ const DeletePage = (props) => {
         Authorization: getCookie('x-auth-token'),
       },
     });
-
+    toast.success('Successfully delete adventure', {
+      position: 'bottom-center',
+    });
     history.push(`/adventures`);
   };
 
